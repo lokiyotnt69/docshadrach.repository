@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<addons>
-
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="repository.docshadrach" name="Doc Shadrach's Add-ons" version="1.0" provider-name="Doc Shadrach">
 	<extension point="xbmc.addon.repository" name="Doc Shadrach's Add-ons Repo 1.0">
 		<info compressed="false">http://github.com/XBMCSpot/docshadrach.repository/raw/master/addons.xml</info>
@@ -15,17 +12,3 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.ft" name="FT" version="1.0" provider-name="Doc Shadrach">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="es">FT</summary>
-		<description>Buscador de videos a traves de servidores.</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-</addons>
