@@ -121,10 +121,18 @@ def find_host():
 host = find_host()
 
 
-if Config.getSetting("sort") == 'true':
+if Config.getSetting("sort") == '1':
+	sort = "&sort=pd"
+elif Config.getSetting("sort") == '2':
 	sort = "&sort=dd"
+elif Config.getSetting("sort") == '3':
+    sort = "&sort=da"
+elif Config.getSetting("sort") == '4':
+    sort = "&sort=sd"
+elif Config.getSetting("sort") == '5':
+    sort = "&sort=sa"
 else:
-	sort = ""
+    sort = ""
 
 
 if Config.getSetting("anyday") == '0':
@@ -139,7 +147,7 @@ page_n = int(Config.getSetting("pages")) / 10
 	
 def run_addon(api, search, host, sort, days, page_n): 
     if search == "" or Config.getSetting("pregunta_search") == 'false':
-        filestube(api, "hdrip", host, "", days, page_n)
+        filestube(api, "hdrip", host, sort, days, page_n)
     else:
         filestube(api, search, host, sort, days, page_n)
 
