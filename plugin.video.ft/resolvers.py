@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import urllib2, re
-
+import urlresolver
 
 def allmyvideos(url):
         url_id = url.replace("http://allmyvideos.net/", "")
@@ -54,4 +54,11 @@ def vodlocker(url):
         url_direc = re.compile('\n    file: "(.+?)",\n').findall(link)
         #print url_direc
         return url_direc
+    
+
+def get_resolved(url):
+        url_direc = urlresolver.resolve(url)
+        # print url_direc
+        return url_direc
+
 
