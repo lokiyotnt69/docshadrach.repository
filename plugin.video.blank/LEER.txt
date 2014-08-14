@@ -1,11 +1,12 @@
 
-versión 1.0
+versión 1.1
+SI VIENES USANDO UNA VERSIÓN ANTERIOR Y YA TIENES CREADO TU PROPIO ADD-ON,
+LEE EL ARCHIVO changelog.txt PARA ENTERARTE CÓMO TE AFECTA ESTA NUEVA VERSIÓN.
+
+SI ESTA ES TU PRIMER VERSIÓN, LEE ATENTAMENTE LAS SIGUIENTES INSTRUCCIONES.
+
 
 INSTRUCCIONES A SEGUIR:
-
-#### ANTES DE EMPEZAR ####
-#### CONSEJO: EVITA SIEMPRE USAR ACENTOS Y Ñ, SUELEN CAUSAR PROBLEMAS ####
-
 
 *** PASO 1:
 Piensa en un nombre para tu add-on.
@@ -14,7 +15,7 @@ Pondremos como ejemplo que quieres llamar a tu addon "Mundo Pelis".
 
 *** PASO 2:
 Extrae en el ordenador la carpeta "plugin.video.miaddon"
-que se encuentra dentro del fichero "plugin.video.miaddon-1.0.zip",
+que se encuentra dentro del fichero "plugin.video.miaddon.zip",
 en la misma ruta que este archivo (LEER.txt).
 Cámbiale el nombre a dicha carpeta.
 Siguiendo el ejemplo, deberías ponerle "plugin.video.mundopelis".
@@ -55,7 +56,8 @@ Aclaraciones adicionales:
 VIDEO significa enlaces a películas, TV significa enlaces a canales de televión.
 XML es la estructura básica de una lista de etiquetas, como las que se usan
 en LiveStreams o iStream, PLX es el formato de lista de Navi-X.
-El contenido TV solo admite listas de tipo XML, por el momento.
+La estructura básica de XML, encierra cada item entre etiquetas <item> </item>,
+si tu lista no incluye estas etiquetas, no se leerá bien.
 
 Ejemplo (ficticio) de add-on con 3 carpetas de diferente contenido:
 
