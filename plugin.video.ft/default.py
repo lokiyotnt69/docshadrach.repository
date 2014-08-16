@@ -29,27 +29,32 @@ def filestube(api, search, host, sort, days, page_n):
                 resp.close()
                 rematch = re.compile('<a name=".+?"></a> <a class=".+?" title="(.+?)" href="(.+?)"').findall(titleandlink)
                 for title, direc_link in rematch:
-                    if direc_link.startswith("http://allmyvideos.net/"):
+                    if re.match(".*allmyvideos.*", direc_link):
                         url_direc = resolvers.allmyvideos(direc_link)
                         for reallink in url_direc:
-                            addLink("[B][allmyvideos] [/B]" + title, reallink, 1, '')
-                    elif direc_link.startswith("http://played.to/"):
+                            addLink("[COLOR ff6495ed][B][allmyvideos] [/B][/COLOR]" + title, reallink, 1, '')
+                    elif re.match(".*played.to*", direc_link):
                         url_direc = resolvers.played(direc_link)
                         for reallink in url_direc:
-                            addLink("[B][played.to] [/B]" + title, reallink, 1, '')
-                    elif direc_link.startswith("http://www.vidspot.net/"):
+                            addLink("[COLOR ff9acd32][B][played.to] [/B][/COLOR]" + title, reallink, 1, '')
+                    elif re.match(".*vidspot.*", direc_link):
                         url_direc = resolvers.vidspot(direc_link)
                         for reallink in url_direc:
-                            addLink("[B][vidspot] [/B]" + title, reallink, 1, '')
-                    elif direc_link.startswith("http://vodlocker.com/"):
+                            addLink("[COLOR ff0000cd][B][vidspot] [/B][/COLOR]" + title, reallink, 1, '')
+                    elif re.match(".*vodlocker.*", direc_link):
                         url_direc = resolvers.vodlocker(direc_link)
                         for reallink in url_direc:
-                            addLink("[B][vodlocker] [/B]" + title, reallink, 1, '')
-                    elif direc_link.startswith("http://www.movshare.net/"):
+                            addLink("[COLOR fff4a460][B][vodlocker] [/B][/COLOR]" + title, reallink, 1, '')
+                    elif re.match(".*movshare.*", direc_link):
                         url_direc = resolvers.get_resolved(direc_link)
-                        addLink("[B][movshare] [/B]" + title, url_direc, 1, '')
+                        addLink("[COLOR ff800080][B][movshare] [/B][/COLOR]" + title, url_direc, 1, '')
+                    elif re.match(".*sockshare.*", direc_link):
+                        url_direc = resolvers.get_resolved(direc_link)
+                        addLink("[COLOR ff98fb98][B][sockshare] [/B][/COLOR]" + title, url_direc, 1, '')
+                    """
                     else:
-                        pass                  
+                        pass 
+                    """                 
             page += 1
     except:
         pass
@@ -93,7 +98,11 @@ def find_host():
     
     dialog = xbmcgui.Dialog()
     
-        
+    if Config.getSetting("sockshare") == 'true':
+        sockshare = " 102"
+    else:
+        sockshare = ""
+
     if Config.getSetting("played") == 'true':
         played = " 110"
     else:
@@ -108,7 +117,7 @@ def find_host():
         vidspot = " 112"
     else:
         vidspot = ""
-        
+            
     if Config.getSetting("movshare") == 'true':
         movshare = " 116"
     else:
@@ -119,7 +128,7 @@ def find_host():
     else:
         vodlocker = ""
 
-    hosts = played + allmyvideos + vidspot + movshare + vodlocker
+    hosts = sockshare + played + allmyvideos + vidspot + movshare + vodlocker
     whitespace = hosts.strip()
     host = whitespace.replace(' ', '%2C')
     

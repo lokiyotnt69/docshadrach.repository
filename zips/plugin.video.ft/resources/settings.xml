@@ -13,8 +13,9 @@
 		<setting id="allmyvideos" type="bool" label="allmyvideos.net" default="true"/>
 		<setting id="movshare" type="bool" label="MOVSHARE" default="false"/>
 		<setting id="played" type="bool" label="PLAYED.TO" default="true"/>
+		<setting id="sockshare" type="bool" label="Sockshare" default="false"/>
 		<setting id="vidspot" type="bool" label="VIDSPOT.net" default="true"/>
-		<setting id="vodlocker" type="bool" label="VodLocker.com" default="false"/>
+		<setting id="vodlocker" type="bool" label="VoDLocker" default="false"/>
 	</category>
 	
 	<category label="FilesTube API">
