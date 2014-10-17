@@ -100,4 +100,18 @@ XBMC HUB: j.mp/xbmctorrent]]></description>
 		<platform>all</platform>
 	</extension>
 </addon>
+
+<addon id="plugin.video.checker" name="CHECKER" version="1.0.0" provider-name="Doc Shadrach">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary></summary>
+		<description>Servidores disponibles: allmyvideos, streamcloud, played.to, vidspot, nowvideo, vk.</description>
+		<platform>all</platform>
+	</extension>
+</addon>
 </addons>

@@ -1,0 +1,11 @@
+<settings>
+	
+	<category label="Opciones">
+		<setting label="Playlist" type="lsep" />
+		<setting id="url" type="text" label="URL:" default="" enable="true"/>
+		<setting id="tipo" label="Tipo" type="enum" default="1" values="XML|PLX"/>
+		<setting id="pages" label="Cantidad de páginas (solo para direcciones de navixtreme.com)" type="number" default="1" visible="eq(-1,1)"/>
+		
+	</category>
+
+</settings>
