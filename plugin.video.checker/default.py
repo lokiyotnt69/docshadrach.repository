@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import urllib,urllib2,os,re,sys
+import urllib,urllib2,os,re,shutil,sys
 import xbmcaddon,xbmcplugin,xbmcgui
 import dataparser
 import time,datetime
 
 ts = time.time()
-st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d_%Hh%Mm')
+st = datetime.datetime.fromtimestamp(ts).strftime('%Hh%Mm')
+dir = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
+
 
 Config = xbmcaddon.Addon()
 
@@ -17,15 +19,38 @@ dialog = xbmcgui.Dialog()
 
 path = os.path.join(xbmcaddon.Addon().getAddonInfo('path')) + "\\checklogs\\"
 
-file = path + st + "_checked.txt"
+dailydir = path + '\\' + dir + '\\'
+
+if not os.path.exists(path):
+    os.makedirs(path)
+
+if not os.path.exists(dailydir):
+    os.makedirs(dailydir)
+
+file = dailydir + st + "_checked.txt"
 
 print "PATH " + path
+
+
+folders = list(os.listdir(path))
+
+if Config.getSetting("checklogs") == 'true':
+    x = 0 
+    for x in range(0,len(folders)):
+        if folders[x] == dir:
+            x +=1
+            pass
+        else:
+            shutil.rmtree(path + '\\' + folders[x])
+            x +=1
+else: pass
 
 
 
 def addLink(name,url,iconimage):
     liz = xbmcgui.ListItem(name, iconImage="DefaultFolder.png", thumbnailImage=iconimage)
     xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=url,listitem=liz,isFolder=False)
+
 
 
 def plx_parser(masterurl,pages):
@@ -95,7 +120,7 @@ def plx_parser(masterurl,pages):
                         name = names[0]
                         thumb = ""
                         url = urls[0]
-                    if re.match(".*allmyvideos.*", url):
+                    if re.match(".*allmyvideos.*", url.lower()):
                         # print url
                         req = urllib2.Request(url)
                         req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -111,7 +136,7 @@ def plx_parser(masterurl,pages):
                                 f.write("url: " + url + "\n")
                                 f.write("\n")
                             else: pass
-                    elif re.match(".*streamcloud.*", url):
+                    elif re.match(".*streamcloud.*", url.lower()):
                         # print url
                         req = urllib2.Request(url)
                         req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -127,7 +152,7 @@ def plx_parser(masterurl,pages):
                                 f.write("url: " + url + "\n")
                                 f.write("\n")
                             else: pass
-                    elif re.match(".*played.to.*", url):
+                    elif re.match(".*played.to.*", url.lower()):
                         # print url
                         req = urllib2.Request(url)
                         req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -143,7 +168,7 @@ def plx_parser(masterurl,pages):
                                 f.write("url: " + url + "\n")
                                 f.write("\n")
                             else: pass
-                    elif re.match(".*nowvideo.*", url):
+                    elif re.match(".*nowvideo.*", url.lower()):
                         # print url
                         req = urllib2.Request(url)
                         req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -159,7 +184,7 @@ def plx_parser(masterurl,pages):
                                 f.write("url: " + url + "\n")
                                 f.write("\n")
                             else: pass
-                    elif re.match(".*vidspot.*", url):
+                    elif re.match(".*vidspot.*", url.lower()):
                         # print url
                         req = urllib2.Request(url)
                         req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -175,10 +200,10 @@ def plx_parser(masterurl,pages):
                                 f.write("url: " + url + "\n")
                                 f.write("\n")
                             else: pass
-                    elif re.match(".*vk.com.*", url):
+                    elif re.match(".*vk.com.*", url.lower()):
                         try:
                             # print url
-                            if re.match(".*m.vk.com/video[0-9].*", url):
+                            if re.match(".*m.vk.com/video[0-9].*", url.lower()):
                                 addLink(name + "[COLOR darkorange] [untestable] [/COLOR][COLOR skyblue]VK MOVIL[/COLOR]", url, thumb)
                                 f.write("* " + name + " [untestable]\n")
                                 f.write("url: " + url + "\n")
@@ -205,6 +230,18 @@ def plx_parser(masterurl,pages):
                             f.write("* " + name + " [BLOCKED]\n")
                             f.write("url: " + url + "\n")
                             f.write("\n")
+                    elif re.match(".*youtube.*", url.lower()):
+                        pass
+                    else:
+                        print "OUTSIDE " + url
+                        server = url.split("/")
+                        if Config.getSetting("notsupp") == 'true':
+                            addLink(name + "[COLOR hotpink] [notSUPP] [/COLOR]" + "[COLOR antiquewhite]" + server[2] + "[/COLOR]", url, thumb)
+                            f.write("* " + name + " [notSUPP]\n")
+                            f.write("url: " + url + "\n")
+                            f.write("\n")
+                        else:
+                            pass
             page += 1
         f.close()
 
@@ -241,7 +278,7 @@ def xml_parser(masterurl):
             if url == "":
                 pass
             else:
-                if re.match(".*allmyvideos.*", url):
+                if re.match(".*allmyvideos.*", url.lower()):
                     # print url
                     req = urllib2.Request(url)
                     req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -257,7 +294,7 @@ def xml_parser(masterurl):
                             f.write("url: " + url + "\n")
                             f.write("\n")
                         else: pass
-                elif re.match(".*streamcloud.*", url):
+                elif re.match(".*streamcloud.*", url.lower()):
                     # print url
                     req = urllib2.Request(url)
                     req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -273,7 +310,7 @@ def xml_parser(masterurl):
                             f.write("url: " + url + "\n")
                             f.write("\n")
                         else: pass
-                elif re.match(".*played.to.*", url):
+                elif re.match(".*played.to.*", url.lower()):
                     # print url
                     req = urllib2.Request(url)
                     req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -289,7 +326,7 @@ def xml_parser(masterurl):
                             f.write("url: " + url + "\n")
                             f.write("\n")
                         else: pass
-                elif re.match(".*nowvideo.*", url):
+                elif re.match(".*nowvideo.*", url.lower()):
                     # print url
                     req = urllib2.Request(url)
                     req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -305,7 +342,7 @@ def xml_parser(masterurl):
                             f.write("url: " + url + "\n")
                             f.write("\n")
                         else: pass
-                elif re.match(".*vidspot.*", url):
+                elif re.match(".*vidspot.*", url.lower()):
                     # print url
                     req = urllib2.Request(url)
                     req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -321,10 +358,10 @@ def xml_parser(masterurl):
                             f.write("url: " + url + "\n")
                             f.write("\n")
                         else: pass
-                elif re.match(".*vk.com.*", url):
+                elif re.match(".*vk.com.*", url.lower()):
                     try:
                         # print url
-                        if re.match(".*m.vk.com/video[0-9].*", url):
+                        if re.match(".*m.vk.com/video[0-9].*", url.lower()):
                             addLink(name + "[COLOR darkorange] [untestable] [/COLOR][COLOR skyblue]VK MOVIL[/COLOR]", url, thumb)
                             f.write("* " + name + " [untestable]\n")
                             f.write("url: " + url + "\n")
@@ -351,6 +388,18 @@ def xml_parser(masterurl):
                         f.write("* " + name + " [BLOCKED]\n")
                         f.write("url: " + url + "\n")
                         f.write("\n")
+                elif re.match(".*youtube.*", url.lower()):
+                        pass
+                else:
+                    print "OUTSIDE " + url
+                    server = url.split("/")
+                    if Config.getSetting("notsupp") == 'true':
+                        addLink(name + "[COLOR hotpink] [notSUPP] [/COLOR]" + "[COLOR antiquewhite]" + server[2] + "[/COLOR]", url, thumb)
+                        f.write("* " + name + " [notSUPP]\n")
+                        f.write("url: " + url + "\n")
+                        f.write("\n")
+                    else:
+                        pass
         f.close()
 
     except:
@@ -364,6 +413,14 @@ def xml_parser(masterurl):
 
 masterurl = Config.getSetting("url")
 pages = Config.getSetting("pages")
+
+
+if Config.getSetting("eraselogs") == 'true':
+    shutil.rmtree(path)
+    Config.setSetting("eraselogs",'false')
+    dialog.ok('INFO', 'CheckLogs borrados con éxito.')
+    sys.exit()
+else: pass
 
 
 if masterurl == "":
