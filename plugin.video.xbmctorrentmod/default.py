@@ -10,23 +10,30 @@ Config = xbmcaddon.Addon()
 
 dialog = xbmcgui.Dialog()
 
-addondir = os.path.join(xbmcaddon.Addon().getAddonInfo('path'))
-addonsdir = str(addondir).replace("mod","")
+addondir = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.xbmctorrentmod/'))
+addonsdir = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.xbmctorrent/'))
 
+moddirsc = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.xbmctorrentmod/mods/'))
+moddirxt = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.xbmctorrent/resources/site-packages/xbmctorrent/scrapers/mods/'))
 
+indexmod = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.xbmctorrent/resources/site-packages/xbmctorrent/scrapers/mods/', 'index_mod.py'))
+index_xt = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.xbmctorrent/resources/site-packages/xbmctorrent/', 'index.py'))
+index_bk = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.xbmctorrent/resources/site-packages/xbmctorrent/scrapers/mods/', 'index.py'))
 
 if os.path.isdir(addonsdir) == True and Config.getSetting("state") != "done":
     try:
-        shutil.copytree(addondir + "\\mods\\", addonsdir + "\\resources\\site-packages\\xbmctorrent\\scrapers\\mods\\")
+        shutil.copytree(moddirsc, moddirxt)
     except:
         pass
-    shutil.copy(addonsdir + "\\resources\\site-packages\\xbmctorrent\\scrapers\\mods\\index_mod.py", addonsdir + "\\resources\\site-packages\\xbmctorrent\\index.py")
+
+    shutil.copy(indexmod, index_xt)
     Config.setSetting("state","done")
     dialog.ok("DONE", "Now you have modified scrapers!")
 elif os.path.isdir(addonsdir) == True and Config.getSetting("state") == "done":
-    shutil.copy(addonsdir + "\\resources\\site-packages\\xbmctorrent\\scrapers\\mods\\index.py", addonsdir + "\\resources\\site-packages\\xbmctorrent\\index.py")
+    shutil.copy(index_bk, index_xt)
     Config.setSetting("state","")
     dialog.ok("DONE", "REVERTED.")
 else:
     dialog.ok("ERROR", "Looks like you have not XBMCtorrent.")
     sys.exit()
+    
