@@ -33,25 +33,25 @@ else:
 
 if Config.getSetting("engine") == '0':
     magnet = "plugin://plugin.video.xbmctorrent/play/" + str(url)
+    print "THIS" + str(magnet)
 else:
     magnet = "plugin://plugin.video.pulsar/play?uri=" + str(url)
 
 
-addondir = os.path.join(xbmcaddon.Addon().getAddonInfo('path'))
-addonsdir = str(addondir).replace("plugin.video.magnetplayer","")
+xbmctpath = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.xbmctorrent'))
+pulsarpath = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.pulsar'))
 
-if os.path.isdir(addonsdir + "plugin.video.xbmctorrent") == True and os.path.isdir(addonsdir + "plugin.video.pulsar") == True:
+if os.path.isdir(xbmctpath) == True and os.path.isdir(pulsarpath) == True:
     pass
-elif os.path.isdir(addonsdir + "plugin.video.xbmctorrent") == False and os.path.isdir(addonsdir + "plugin.video.pulsar") == False:
-    dialog.ok('ERROR', 'Para utilizar este add-on,', 'debes tener instalado XBMCtorrent o Pulsar.', 'TIP: Los puedes descargar desde mi repositorio. :)')
+elif os.path.isdir(xbmctpath) == False and os.path.isdir(pulsarpath) == False:
+    dialog.ok('ERROR', '                                  Para utilizar este add-on,', '             necesita tener instalado XBMCtorrent o Pulsar.')
     sys.exit()
-elif os.path.isdir(addonsdir + "plugin.video.xbmctorrent") == True and os.path.isdir(addonsdir + "plugin.video.pulsar") == False:
+elif os.path.isdir(xbmctpath) == True and os.path.isdir(pulsarpath) == False:
     Config.setSetting("engine", "0")
     magnet = "plugin://plugin.video.xbmctorrent/play/" + str(url)
-elif os.path.isdir(addonsdir + "plugin.video.xbmctorrent") == False and os.path.isdir(addonsdir + "plugin.video.pulsar") == True:
+elif os.path.isdir(xbmctpath) == False and os.path.isdir(pulsarpath) == True:
     Config.setSetting("engine", "1")
     magnet = "plugin://plugin.video.pulsar/play?uri=" + str(url)
-
 
 
 xbmc.Player().play(magnet)
