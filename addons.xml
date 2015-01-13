@@ -28,21 +28,6 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.ft" name="FT" version="1.2" provider-name="Doc Shadrach">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-		<import addon="script.module.urlresolver" version="1.0.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>FT</summary>
-		<description>Rastrea los servidores en busca de videos.</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
 <addon id="plugin.video.magnetplayer" name="Magnet Player" version="1.0.1" provider-name="Doc Shadrach">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
@@ -55,49 +40,6 @@
 		<description>Reproduce 'Magnet Links' utilizando XBMCtorrent y/o Pulsar.</description>
 		<platform>all</platform>
 	</extension>
-</addon>
-
-<addon id="plugin.video.pulsar" name="Pulsar" version="0.1.0" provider-name="steeve">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="pulsard.py" start="login"/>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <language></language>
-    </extension>
-</addon>
-
-<addon id="plugin.video.xbmctorrent" name="XBMCtorrent" version="0.6.4" provider-name="steeve">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.repository" name="XBMCtorrent Autoupdate Repository">
-        <info compressed="false">http://xbmctorrent.herokuapp.com/addons.xml</info>
-        <checksum>http://xbmctorrent.herokuapp.com/addons.xml.md5</checksum>
-        <datadir zip="true">http://xbmctorrent.herokuapp.com/</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <website><![CDATA[http://j.mp/xbmctorrent]]></website>
-        <forum><![CDATA[http://j.mp/xbmctorrent]]></forum>
-        <source><![CDATA[https://github.com/steeve/xbmctorrent]]></source>
-        <language></language>
-        <license><![CDATA[GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007]]></license>
-        <summary><![CDATA[XBMCtorrent: Torrent streaming for XBMC.]]></summary>
-        <description><![CDATA[Watch torrents directly from XBMC, without waiting.
-
-To get the latest updates:
-Twitter: twitter.com/xbmctorrent
-Facebook: facebook.com/xbmctorrent
-XBMC HUB: j.mp/xbmctorrent]]></description>
-    </extension>
 </addon>
 
 <addon id="plugin.video.xbmctorrentmod" name="XBMCtorrent to Pulsar" version="1.0.1" provider-name="Doc Shadrach">
