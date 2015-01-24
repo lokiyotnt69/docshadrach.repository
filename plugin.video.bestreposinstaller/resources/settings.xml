@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>	
+	<category label="Repositorios">
+		<setting label="Bromix Add-ons" type="lsep" />
+   		<setting id="bromix" type="bool" label="YouTube ..." default="true"/>
+		<setting label="Kinkins REPO" type="lsep" />
+		<setting id="kinkin" type="bool" label="MP3 Streams - Movies4ME ..." default="true"/>
+		<setting label="lambda Add-on repository" type="lsep" />
+		<setting id="lambda" type="bool" label="Genesis - Football Today ..." default="true"/>
+		<setting label="MetalKettles Addon Repository" type="lsep" />
+		<setting id="metal" type="bool" label="Movies HD - Online Movies Pro - MK Sports ..." default="true"/>
+		<setting label="p2p-streams repository" type="lsep" />
+		<setting id="enen" type="bool" label="p2p-streams" default="true"/>				
+		<setting label="Pulsar Unofficial Repo Mirror" type="lsep" />
+		<setting id="pulsar" type="bool" label="Pulsar - XBMCtorrent - providers ..." default="true"/>
+		<setting label="Shanis Addon Repository" type="lsep" />
+		<setting id="shani" type="bool" label="LiveStreamsPro ..." default="true"/>
+		<setting label="TheHighway's Addons" type="lsep" />
+		<setting id="highway" type="bool" label="Dreamcatcher - iLive - KissAnime ..." default="true"/>
+		<setting label="TheYid's REPO" type="lsep" />
+		<setting id="theyid" type="bool" label="Entertainment HUB - MyVideoLinks ..." default="true"/>
+		<setting label="tknorris Release Repository" type="lsep" />
+		<setting id="tknorris" type="bool" label="Stream All The Sources (SALTS) - 1Channel" default="true"/>
+		<setting label="TotalRevolution" type="lsep" />
+		<setting id="total" type="bool" label="TR Total Installer ..." default="true"/>
+		<setting label="TVADDONS.ag Addon Repository" type="lsep" />
+		<setting id="tvaddons" type="bool" label="Phoenix - Navi-X - Maintenance Tools ..." default="true"/>
+		<setting label="XBMC Israeli Streaming Sites" type="lsep" />
+		<setting id="israeli" type="bool" label=" Playlist Loader ..." default="true"/>
+		<setting label="XunityTalk Repository" type="lsep" />
+		<setting id="xunity" type="bool" label="iStream - World TV - Vdubt25..." default="true"/>
+	</category>
+</settings>
