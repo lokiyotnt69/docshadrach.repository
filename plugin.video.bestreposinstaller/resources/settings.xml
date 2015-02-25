@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>	
 	<category label="Repositorios">
+		<setting label="anonymous repo" type="lsep" />
+   		<setting id="anon" type="bool" label="K0di Tools ..." default="true"/>
 		<setting label="Bromix Add-ons" type="lsep" />
    		<setting id="bromix" type="bool" label="YouTube ..." default="true"/>
 		<setting label="Kinkins REPO" type="lsep" />
@@ -21,6 +23,8 @@
 		<setting id="theyid" type="bool" label="Entertainment HUB - MyVideoLinks ..." default="true"/>
 		<setting label="tknorris Release Repository" type="lsep" />
 		<setting id="tknorris" type="bool" label="Stream All The Sources (SALTS) - 1Channel" default="true"/>
+		<setting label="tknorris Beta Testing Repository" type="lsep" />
+		<setting id="tknorrisb" type="bool" label="Trakt beta ..." default="true"/>		
 		<setting label="TotalRevolution" type="lsep" />
 		<setting id="total" type="bool" label="TR Total Installer ..." default="true"/>
 		<setting label="TVADDONS.ag Addon Repository" type="lsep" />
@@ -28,6 +32,6 @@
 		<setting label="XBMC Israeli Streaming Sites" type="lsep" />
 		<setting id="israeli" type="bool" label=" Playlist Loader ..." default="true"/>
 		<setting label="XunityTalk Repository" type="lsep" />
-		<setting id="xunity" type="bool" label="iStream - World TV - Vdubt25..." default="true"/>
+		<setting id="xunity" type="bool" label="iStream - World TV - Vdubt25 ..." default="true"/>
 	</category>
 </settings>

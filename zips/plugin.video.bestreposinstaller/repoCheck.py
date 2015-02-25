@@ -31,6 +31,26 @@ def DocRepo():
 	xbmc.executebuiltin("UpdateAddonRepos")
 
 
+def Anon():
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.anonymous')):
+		return
+		
+	url = "http://anonymous-repo.googlecode.com/svn/trunk/repository.anonymous.zip"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
+	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
+	
+	
 def Bromix():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.bromix')):
 		return
@@ -155,7 +175,7 @@ def Shani():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.shani')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.shani-2.3.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.shani-2.5.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -216,6 +236,26 @@ def Tknorris():
 		return
 		
 	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.tknorris.release-1.0.1.zip"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
+	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
+	
+
+def Tknorrisb():
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.tknorris.beta')):
+		return
+		
+	url = "https://github.com/tknorris/tknorris-beta-repo/blob/master/zips/repository.tknorris.beta/repository.tknorris.beta-1.0.1.zip?raw=true"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
