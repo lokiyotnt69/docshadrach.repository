@@ -2,36 +2,46 @@
 <settings>	
 	<category label="Repositorios">
 		<setting label="anonymous repo" type="lsep" />
-   		<setting id="anon" type="bool" label="K0di Tools ..." default="true"/>
+   		<setting id="anon" type="bool" label="K0di Tools ..." default="false"/>
 		<setting label="Bromix Add-ons" type="lsep" />
-   		<setting id="bromix" type="bool" label="YouTube ..." default="true"/>
+   		<setting id="bromix" type="bool" label="Vimeo, YouTube, SoundCloud ..." default="false"/>
+		<setting label="iWillFollo add-ons" type="lsep" />
+   		<setting id="iwf" type="bool" label="SportsDevil" default="false"/>	
 		<setting label="Kinkins REPO" type="lsep" />
-		<setting id="kinkin" type="bool" label="MP3 Streams - Movies4ME ..." default="true"/>
+		<setting id="kinkin" type="bool" label="MP3 Streams - Movies4ME ..." default="false"/>
 		<setting label="lambda Add-on repository" type="lsep" />
-		<setting id="lambda" type="bool" label="Genesis - Football Today ..." default="true"/>
+		<setting id="lambda" type="bool" label="Genesis - Football Today ..." default="false"/>
 		<setting label="MetalKettles Addon Repository" type="lsep" />
-		<setting id="metal" type="bool" label="Movies HD - Online Movies Pro - MK Sports ..." default="true"/>
+		<setting id="metal" type="bool" label="Movies HD - Online Movies Pro - MK Sports ..." default="false"/>
 		<setting label="p2p-streams repository" type="lsep" />
-		<setting id="enen" type="bool" label="p2p-streams" default="true"/>				
+		<setting id="enen" type="bool" label="p2p-streams" default="false"/>				
 		<setting label="Pulsar Unofficial Repo Mirror" type="lsep" />
-		<setting id="pulsar" type="bool" label="Pulsar - XBMCtorrent - providers ..." default="true"/>
+		<setting id="pulsar" type="bool" label="Pulsar - XBMCtorrent - providers ..." default="false"/>
 		<setting label="Shanis Addon Repository" type="lsep" />
-		<setting id="shani" type="bool" label="LiveStreamsPro ..." default="true"/>
+		<setting id="shani" type="bool" label="LiveStreamsPro ..." default="false"/>
 		<setting label="TheHighway's Addons" type="lsep" />
-		<setting id="highway" type="bool" label="Dreamcatcher - iLive - KissAnime ..." default="true"/>
+		<setting id="highway" type="bool" label="Dreamcatcher - iLive - KissAnime ..." default="false"/>
 		<setting label="TheYid's REPO" type="lsep" />
-		<setting id="theyid" type="bool" label="Entertainment HUB - MyVideoLinks ..." default="true"/>
+		<setting id="theyid" type="bool" label="Entertainment HUB - MyVideoLinks ..." default="false"/>
 		<setting label="tknorris Release Repository" type="lsep" />
-		<setting id="tknorris" type="bool" label="Stream All The Sources (SALTS) - 1Channel" default="true"/>
-		<setting label="tknorris Beta Testing Repository" type="lsep" />
-		<setting id="tknorrisb" type="bool" label="Trakt beta ..." default="true"/>		
+		<setting id="tknorris" type="bool" label="Stream All The Sources (SALTS) - 1Channel" default="false"/>		
 		<setting label="TotalRevolution" type="lsep" />
-		<setting id="total" type="bool" label="TR Total Installer ..." default="true"/>
+		<setting id="total" type="bool" label="TR Total Installer ..." default="false"/>
 		<setting label="TVADDONS.ag Addon Repository" type="lsep" />
-		<setting id="tvaddons" type="bool" label="Phoenix - Navi-X - Maintenance Tools ..." default="true"/>
+		<setting id="tvaddons" type="bool" label="Phoenix - Navi-X - Maintenance Tools ..." default="false"/>
 		<setting label="XBMC Israeli Streaming Sites" type="lsep" />
-		<setting id="israeli" type="bool" label=" Playlist Loader ..." default="true"/>
+		<setting id="israeli" type="bool" label=" Playlist Loader ..." default="false"/>
 		<setting label="XunityTalk Repository" type="lsep" />
-		<setting id="xunity" type="bool" label="iStream - World TV - Vdubt25 ..." default="true"/>
+		<setting id="xunity" type="bool" label="iStream - World TV - Vdubt25 ..." default="false"/>
+	</category>
+	
+	<category label="PLUS">
+		<setting label="Add-ons huérfanos (sin repositorio)" type="lsep" />
+   		<setting id="latino" type="bool" label="latinototal 0.2.0" default="false"/>
+   		<setting id="pelisalacarta" type="bool" label="pelisalacarta 3.2.74" default="false"/>
+   		<setting id="tvalacarta" type="bool" label="tvalacarta 3.3.21" default="false"/>
+   		<setting id="kmedia" type="bool" label="KMediaTorrent 2.3.3" default="false"/>
+   		<setting id="mashup" type="bool" label="Mash Up 1.4.2" default="false"/>
+   		<setting id="bbc" type="bool" label="BBC Football Scores 0.3.0 rc2" default="false"/>
 	</category>
 </settings>

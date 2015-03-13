@@ -71,6 +71,26 @@ def Bromix():
 	xbmc.executebuiltin("UpdateAddonRepos")
 
 
+def Iwf():
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.iWillFolo.xbmc')):
+		return
+		
+	url = "https://www.dropbox.com/s/rreb2tooy5rsajk/SPORTSDEVIL.iWillFolo.xbmc.zip?dl=1"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
+	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
+	
+
 def Kinkin():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.Kinkin')):
 		return
@@ -195,7 +215,7 @@ def Highway():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.thehighway')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.thehighway-0.0.4.zip"
+	url = "https://github.com/HIGHWAY99/repository.thehighway/blob/master/repo/repository.thehighway/repository.thehighway-0.0.5.zip?raw=true"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -236,26 +256,6 @@ def Tknorris():
 		return
 		
 	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.tknorris.release-1.0.1.zip"
-	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
-	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
-	
-	urllib.urlretrieve(url, packageFile)
-	ExtractAll(packageFile, addonsDir)
-		
-	try:
-		os.remove(packageFile)
-	except:
-		pass
-			
-	xbmc.executebuiltin("UpdateLocalAddons")
-	xbmc.executebuiltin("UpdateAddonRepos")
-	
-
-def Tknorrisb():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.tknorris.beta')):
-		return
-		
-	url = "https://github.com/tknorris/tknorris-beta-repo/blob/master/zips/repository.tknorris.beta/repository.tknorris.beta-1.0.1.zip?raw=true"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -349,4 +349,5 @@ def Xunity():
 			
 	xbmc.executebuiltin("UpdateLocalAddons")
 	xbmc.executebuiltin("UpdateAddonRepos")
+	
 
