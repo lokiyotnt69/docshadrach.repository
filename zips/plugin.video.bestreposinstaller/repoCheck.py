@@ -95,7 +95,7 @@ def Kinkin():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.Kinkin')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.Kinkin-1.2.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.Kinkin-1.2.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -115,7 +115,7 @@ def Lambda():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.lambda')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.lambda-1.0.9.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.lambda-1.0.9.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -155,7 +155,7 @@ def Enen():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.p2p-streams.xbmc')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.p2p-streams.xbmc-1.0.3.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.p2p-streams.xbmc-1.0.3.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -195,7 +195,7 @@ def Shani():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.shani')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.shani-2.5.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.shani-2.5.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -235,7 +235,7 @@ def Theyid():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.TheYid')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.TheYid-1.7.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.TheYid-1.7.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -255,7 +255,7 @@ def Tknorris():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.tknorris.release')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.tknorris.release-1.0.1.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.tknorris.release-1.0.1.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -295,7 +295,7 @@ def Tvaddons():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.xbmchub')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/repository.xbmchub-1.0.5.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.xbmchub-1.0.5.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
