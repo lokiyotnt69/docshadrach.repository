@@ -36,7 +36,7 @@ def Pelisalacarta():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.pelisalacarta')):
 		return
 		
-	url = "http://blog.tvalacarta.info/descargas/pelisalacarta-xbmc-addon-gotham-3.2.74.zip"
+	url = "http://blog.tvalacarta.info/descargas/pelisalacarta-xbmc-addon-gotham-3.9.99.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	

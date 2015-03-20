@@ -40,7 +40,7 @@
 	<category label="PLUS">
 		<setting label="Add-ons huérfanos (sin repositorio)" type="lsep" />
    		<setting id="latino" type="bool" label="latinototal 0.2.0" default="false"/>
-   		<setting id="pelisalacarta" type="bool" label="pelisalacarta 3.2.74" default="false"/>
+   		<setting id="pelisalacarta" type="bool" label="pelisalacarta 3.9.99" default="false"/>
    		<setting id="tvalacarta" type="bool" label="tvalacarta 3.3.21" default="false"/>
    		<setting id="kmedia" type="bool" label="KMediaTorrent 2.3.3" default="false"/>
    		<setting id="mashup" type="bool" label="Mash Up 1.4.2" default="false"/>
