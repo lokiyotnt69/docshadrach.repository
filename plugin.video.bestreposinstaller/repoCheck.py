@@ -90,6 +90,26 @@ def Iwf():
 	xbmc.executebuiltin("UpdateLocalAddons")
 	xbmc.executebuiltin("UpdateAddonRepos")
 	
+	
+def Jason():
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.jas0npc')):
+		return
+		
+	url = "http://jas0npc.pcriot.com/repository.jas0npc-1.0.2.zip"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
+	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
+	
 
 def Kinkin():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.Kinkin')):
@@ -172,10 +192,10 @@ def Enen():
 	
 
 def Pulsar():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.pulsarunofficialmirror')):
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.kodiunderground')):
 		return
 		
-	url = "https://github.com/iCanuck/Unofficial-Pulsar-Repo-Mirror/blob/master/repository.pulsarunofficialmirror/repository.pulsarunofficialmirror-1.0.0.zip?raw=true"
+	url = "http://kodi.speedbox.me/svn_kodi/trunk/repository.kodiunderground/repository.kodiunderground-1.0.3.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	

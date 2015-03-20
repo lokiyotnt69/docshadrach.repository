@@ -6,21 +6,23 @@
 		<setting label="Bromix Add-ons" type="lsep" />
    		<setting id="bromix" type="bool" label="Vimeo, YouTube, SoundCloud ..." default="false"/>
 		<setting label="iWillFollo add-ons" type="lsep" />
-   		<setting id="iwf" type="bool" label="SportsDevil" default="false"/>	
+   		<setting id="iwf" type="bool" label="SportsDevil" default="false"/>
+		<setting label="Jas0npc Repository" type="lsep" />
+		<setting id="jason" type="bool" label="The Mutts Nuts ..." default="false"/> 			
 		<setting label="Kinkins REPO" type="lsep" />
 		<setting id="kinkin" type="bool" label="MP3 Streams - Movies4ME ..." default="false"/>
+		<setting label="Kodi Underground" type="lsep" />
+		<setting id="pulsar" type="bool" label="Pulsar - providers ..." default="false"/>
 		<setting label="lambda Add-on repository" type="lsep" />
 		<setting id="lambda" type="bool" label="Genesis - Football Today ..." default="false"/>
 		<setting label="MetalKettles Addon Repository" type="lsep" />
-		<setting id="metal" type="bool" label="Movies HD - Online Movies Pro - MK Sports ..." default="false"/>
+		<setting id="metal" type="bool" label="Movies HD - AAA Live TV - RobinHood-PeopleList - [COLOR red]Erotik (XXX)[/COLOR] ..." default="false"/>
 		<setting label="p2p-streams repository" type="lsep" />
 		<setting id="enen" type="bool" label="p2p-streams" default="false"/>				
-		<setting label="Pulsar Unofficial Repo Mirror" type="lsep" />
-		<setting id="pulsar" type="bool" label="Pulsar - XBMCtorrent - providers ..." default="false"/>
 		<setting label="Shanis Addon Repository" type="lsep" />
 		<setting id="shani" type="bool" label="LiveStreamsPro ..." default="false"/>
 		<setting label="TheHighway's Addons" type="lsep" />
-		<setting id="highway" type="bool" label="Dreamcatcher - iLive - KissAnime ..." default="false"/>
+		<setting id="highway" type="bool" label="Dreamcatcher - KissAnime ..." default="false"/>
 		<setting label="TheYid's REPO" type="lsep" />
 		<setting id="theyid" type="bool" label="Entertainment HUB - MyVideoLinks ..." default="false"/>
 		<setting label="tknorris Release Repository" type="lsep" />
@@ -42,6 +44,8 @@
    		<setting id="tvalacarta" type="bool" label="tvalacarta 3.3.21" default="false"/>
    		<setting id="kmedia" type="bool" label="KMediaTorrent 2.3.3" default="false"/>
    		<setting id="mashup" type="bool" label="Mash Up 1.4.2" default="false"/>
+   		<setting id="streamnation" type="bool" label="StreamNation 0.7.2" default="false"/>
    		<setting id="bbc" type="bool" label="BBC Football Scores 0.3.0 rc2" default="false"/>
+
 	</category>
 </settings>

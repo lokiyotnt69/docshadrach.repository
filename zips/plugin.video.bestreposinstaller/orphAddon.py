@@ -16,7 +16,7 @@ def Latino():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.latinototal')):
 		return
 		
-	url = "https://www.dropbox.com/s/5yc08uhamly209e/plugin.video.latinototal%200.2.0.zip?dl=1"
+	url = "https://www.dropbox.com/s/j7u4m8k0o56g309/plugin.video.latinototal-0.2.0.zip?dl=1"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -97,6 +97,26 @@ def Mashup():
 		return
 		
 	url = "https://github.com/Mafarricos/Mafarricos-modded-xbmc-addons/blob/master/repo/plugin.video.movie25/plugin.video.movie25-1.4.2.zip?raw=true"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
+	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
+	
+	
+def Streamnation():
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.streamnation')):
+		return
+		
+	url = "https://www.dropbox.com/s/xxvn5md2yczsb3e/plugin.video.streamnation-0.7.2.zip?dl=1"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	

@@ -1,0 +1,25 @@
+v1.3.0
+- Se reemplaza "Pulsar Unofficial Repo" por "Kodi underground"
+- Añadido repositorio "Jas0npc Repository" (The Mutts Nuts)
+- Añadido el add-on StreamNation en la pestaña PLUS
+- Ahora cada vez que se ingresa al add-on aparecen todos los items desactivados
+- Se crea el archivo changelog.txt que acompaña al add-on
+
+v1.2.1
+- Corrección de varios enlaces
+
+v1.2.0
+- Retirado repositorio "tknorris Beta" (Trakt ya tiene actualización oficial)
+- Añadido repositorio "iWillFollo" (SportsDevil)
+- Corregido enlace al repositorio de TheHighway
+- Ahora la configuración por defecto es todo deseleccionado.
+- Nueva pestaña PLUS, que da la posibilidad de instalar add-ons huérfanos (latinototal, pelisalacarta, etc)
+
+v1.1.0
+- Añadido repositorio "anonymous" (K0di Tools)
+- Añadido repositorio "tknorris Beta (Trakt beta)
+- Corregido enlace al repositorio de Shani
+- Ahora se muestra una barra de progreso
+
+v1.0.0
+- Versión inicial
