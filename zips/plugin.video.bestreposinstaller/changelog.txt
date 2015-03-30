@@ -1,3 +1,6 @@
+v1.3.2
+- Corregido enlace al repositorio de lambda.
+
 v1.3.1
 - Actualizado el enlace a pelisalacarta versión 3.9.99
 

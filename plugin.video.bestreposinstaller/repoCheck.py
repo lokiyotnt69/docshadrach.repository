@@ -135,7 +135,7 @@ def Lambda():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.lambda')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.lambda-1.0.9.zip"
+	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.lambda-1.1.0.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
