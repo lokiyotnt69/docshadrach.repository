@@ -56,7 +56,7 @@ def TValacarta():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.tvalacarta')):
 		return
 		
-	url = "http://blog.tvalacarta.info/descargas/tvalacarta-xbmc-addon-gotham-3.3.21.zip"
+	url = "http://blog.tvalacarta.info/descargas/tvalacarta-xbmc-addon-gotham-3.9.99.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -76,7 +76,7 @@ def Kmedia():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.kmediatorrent-2.3.3')):
 		return
 		
-	url = "https://github.com/jmarth/plugin.video.kmediatorrent/archive/v2.3.3.zip"
+	url = "https://github.com/jmarth/plugin.video.kmediatorrent/archive/2.3.4.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	

@@ -1,3 +1,7 @@
+v1.3.3
+- Actualizado el enlace a tvalacarta versión 3.9.99
+- Actualizado el enlace a KMediaTorrent versión 2.3.4
+
 v1.3.2
 - Corregido enlace al repositorio de lambda.
 
