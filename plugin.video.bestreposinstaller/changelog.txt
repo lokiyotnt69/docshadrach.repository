@@ -1,3 +1,6 @@
+v1.3.4
+- Solucionado un problema con el nombre de la carpeta de KMediaTorrent
+
 v1.3.3
 - Actualizado el enlace a tvalacarta versión 3.9.99
 - Actualizado el enlace a KMediaTorrent versión 2.3.4

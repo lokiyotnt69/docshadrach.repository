@@ -73,10 +73,10 @@ def TValacarta():
 	
 	
 def Kmedia():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.kmediatorrent-2.3.3')):
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.kmediatorrent')):
 		return
 		
-	url = "https://github.com/jmarth/plugin.video.kmediatorrent/archive/2.3.4.zip"
+	url = "https://www.dropbox.com/s/51cgu4alyt5rqkz/plugin.video.kmediatorrent-2.3.4.zip?dl=1"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
