@@ -201,7 +201,6 @@ else: pass
 
 Config.setSetting(id='anon', value='false')
 Config.setSetting(id='bromix', value='false')
-Config.setSetting(id='iwf', value='false')
 Config.setSetting(id='jason', value='false')
 Config.setSetting(id='kinkin', value='false')
 Config.setSetting(id='pulsar', value='false')
@@ -217,6 +216,7 @@ Config.setSetting(id='tvaddons', value='false')
 Config.setSetting(id='israeli', value='false')
 Config.setSetting(id='xunity', value='false')
 
+Config.setSetting(id='sportsdevil', value='false')
 Config.setSetting(id='latino', value='false')
 Config.setSetting(id='pelisalacarta', value='false')
 Config.setSetting(id='tvalacarta', value='false')
