@@ -38,13 +38,14 @@ def ExtractAll(_in, _out):
 
     return True
     
+
 def Repo():
-    if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.busterdiggler')):
+    if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.docshadrach')):
         return
         
-    url = "https://github.com/XBMCSpot/busterdiggler.repository/blob/master/zips/repository.busterdiggler-1.0.zip?raw=true"
+    url = "https://github.com/XBMCSpot/docshadrach.repository/raw/master/zips/repository.docshadrach-1.0.zip"
     addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
-    packageFile = os.path.join(addonsDir, 'packages', 'repo.zip')
+    packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
     
     urllib.urlretrieve(url, packageFile)
     ExtractAll(packageFile, addonsDir)
