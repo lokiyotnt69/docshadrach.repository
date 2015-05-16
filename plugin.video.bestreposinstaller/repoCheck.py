@@ -35,7 +35,7 @@ def Anon():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.anonymous')):
 		return
 		
-	url = "http://anonymous-repo.googlecode.com/svn/trunk/repository.anonymous.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.anonymous-1.2.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -55,7 +55,7 @@ def Bromix():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.bromix')):
 		return
 		
-	url = "https://github.com/bromix/repository.bromix.storage/blob/master/repository.bromix/repository.bromix-1.2.2.zip?raw=true"
+	url = "http://shadrach.pcriot.com/Repos/repository.bromix-1.2.2.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -75,7 +75,7 @@ def Iwf():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.iWillFolo.xbmc')):
 		return
 		
-	url = "https://www.dropbox.com/s/rreb2tooy5rsajk/SPORTSDEVIL.iWillFolo.xbmc.zip?dl=1"
+	url = "http://shadrach.pcriot.com/Repos/repository.iWillFolo.xbmc.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -95,7 +95,7 @@ def Jason():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.jas0npc')):
 		return
 		
-	url = "http://jas0npc.pcriot.com/repository.jas0npc-1.0.2.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.jas0npc-1.0.5.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -115,7 +115,7 @@ def Kinkin():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.Kinkin')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.Kinkin-1.2.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.Kinkin-1.3.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -135,7 +135,7 @@ def Lambda():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.lambda')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.lambda-1.1.0.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.lambda-1.1.0.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -155,7 +155,7 @@ def Metal():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.metalkettle')):
 		return
 		
-	url = "https://github.com/metalkettle/MetalKettles-Addon-Repository/blob/master/zips/repository.metalkettle/repository.metalkettle-1.4.3.zip?raw=true"
+	url = "http://shadrach.pcriot.com/Repos/repository.metalkettle-1.4.4.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -175,7 +175,7 @@ def Enen():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.p2p-streams.xbmc')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.p2p-streams.xbmc-1.0.3.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.p2p-streams.xbmc-1.0.4.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -195,7 +195,7 @@ def Pulsar():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.kodiunderground')):
 		return
 		
-	url = "http://kodi.speedbox.me/svn_kodi/trunk/repository.kodiunderground/repository.kodiunderground-1.0.3.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.kodiunderground-1.0.3.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -215,7 +215,7 @@ def Shani():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.shani')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.shani-2.5.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.shani-2.6.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -235,7 +235,7 @@ def Highway():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.thehighway')):
 		return
 		
-	url = "https://github.com/HIGHWAY99/repository.thehighway/blob/master/repo/repository.thehighway/repository.thehighway-0.0.5.zip?raw=true"
+	url = "http://shadrach.pcriot.com/Repos/repository.thehighway-0.0.6.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -255,7 +255,7 @@ def Theyid():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.TheYid')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.TheYid-1.7.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.TheYid-2.0.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -275,7 +275,7 @@ def Tknorris():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.tknorris.release')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.tknorris.release-1.0.1.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.tknorris.release-1.0.1.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -295,7 +295,7 @@ def Total():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.totalinstaller')):
 		return
 		
-	url = "http://i.totalxbmc.tv/repository.totalinstaller.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.totalinstaller.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -315,7 +315,7 @@ def Tvaddons():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.xbmchub')):
 		return
 		
-	url = "http://fusion.tvaddons.ag/xbmc-repos/english/repository.xbmchub-1.0.5.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.xbmchub-1.0.5.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -335,7 +335,7 @@ def Israeli():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.xbmc-israel')):
 		return
 		
-	url = "https://github.com/cubicle-vdo/xbmc-israel/raw/master/repo/repository.xbmc-israel/repository.xbmc-israel-1.0.4.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.xbmc-israel-1.0.4.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -355,7 +355,7 @@ def Xunity():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.xunitytalk')):
 		return
 		
-	url = "http://xunitytalk.com/xfinity/XunityTalk_Repository.zip"
+	url = "http://shadrach.pcriot.com/Repos/XunityTalk_Repository.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	

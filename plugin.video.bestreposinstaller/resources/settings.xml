@@ -5,8 +5,6 @@
    		<setting id="anon" type="bool" label="K0di Tools ..." default="false"/>
 		<setting label="Bromix Add-ons" type="lsep" />
    		<setting id="bromix" type="bool" label="Vimeo, YouTube, SoundCloud ..." default="false"/>
-		<setting label="iWillFollo add-ons" type="lsep" />
-   		<setting id="iwf" type="bool" label="SportsDevil" default="false"/>
 		<setting label="Jas0npc Repository" type="lsep" />
 		<setting id="jason" type="bool" label="The Mutts Nuts ..." default="false"/> 			
 		<setting label="Kinkins REPO" type="lsep" />
@@ -16,7 +14,7 @@
 		<setting label="lambda Add-on repository" type="lsep" />
 		<setting id="lambda" type="bool" label="Genesis - Football Today ..." default="false"/>
 		<setting label="MetalKettles Addon Repository" type="lsep" />
-		<setting id="metal" type="bool" label="Movies HD - AAA Live TV - RobinHood-PeopleList - [COLOR red]Erotik (XXX)[/COLOR] ..." default="false"/>
+		<setting id="metal" type="bool" label="Movies HD - IPTV Stalker - NJM Soccer - [COLOR red]Erotik (XXX)[/COLOR] ..." default="false"/>
 		<setting label="p2p-streams repository" type="lsep" />
 		<setting id="enen" type="bool" label="p2p-streams" default="false"/>				
 		<setting label="Shanis Addon Repository" type="lsep" />
@@ -39,13 +37,18 @@
 	
 	<category label="PLUS">
 		<setting label="Add-ons huérfanos (sin repositorio)" type="lsep" />
+   		<setting id="sportsdevil" type="bool" label="SportsDevil [2015-05-02]" default="false"/>
    		<setting id="latino" type="bool" label="latinototal 0.2.0" default="false"/>
    		<setting id="pelisalacarta" type="bool" label="pelisalacarta 3.9.99" default="false"/>
    		<setting id="tvalacarta" type="bool" label="tvalacarta 3.9.99" default="false"/>
-   		<setting id="kmedia" type="bool" label="KMediaTorrent 2.3.4" default="false"/>
+   		<setting id="kmedia" type="bool" label="KMediaTorrent 2.3.7" default="false"/>
    		<setting id="mashup" type="bool" label="Mash Up 1.4.2" default="false"/>
    		<setting id="streamnation" type="bool" label="StreamNation 0.7.2" default="false"/>
    		<setting id="bbc" type="bool" label="BBC Football Scores 0.3.0 rc2" default="false"/>
-
 	</category>
+	
+	<category label="[COLOR green]CHANGELOG[/COLOR]">
+		<setting id="changelog" type="bool" label="Mostrar lista de cambios con cada actualización" default="true"/>
+	</category>
+	
 </settings>

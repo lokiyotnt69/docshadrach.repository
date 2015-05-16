@@ -10,13 +10,31 @@ def ExtractAll(_in, _out):
 		return False
 
 	return True
-	
-	
+
+
+def SportsDevil():
+
+    url = "http://shadrach.pcriot.com/Add-ons/plugin.video.SportsDevil-2015-05-02.zip"
+    addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+    packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
+    
+    urllib.urlretrieve(url, packageFile)
+    ExtractAll(packageFile, addonsDir)
+        
+    try:
+        os.remove(packageFile)
+    except:
+        pass
+            
+    xbmc.executebuiltin("UpdateLocalAddons")
+    xbmc.executebuiltin("UpdateAddonRepos")
+
+
 def Latino():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.latinototal')):
-		return
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.latinototal')):
+	#	return
 		
-	url = "https://www.dropbox.com/s/j7u4m8k0o56g309/plugin.video.latinototal-0.2.0.zip?dl=1"
+	url = "http://shadrach.pcriot.com/Add-ons/plugin.video.latinototal-0.2.0.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -33,10 +51,10 @@ def Latino():
 	
 	
 def Pelisalacarta():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.pelisalacarta')):
-		return
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.pelisalacarta')):
+	#	return
 		
-	url = "http://blog.tvalacarta.info/descargas/pelisalacarta-xbmc-addon-gotham-3.9.99.zip"
+	url = "http://shadrach.pcriot.com/Add-ons/pelisalacarta-xbmc-addon-gotham-3.9.99.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -53,10 +71,10 @@ def Pelisalacarta():
 	
 	
 def TValacarta():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.tvalacarta')):
-		return
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.tvalacarta')):
+	#	return
 		
-	url = "http://blog.tvalacarta.info/descargas/tvalacarta-xbmc-addon-gotham-3.9.99.zip"
+	url = "http://shadrach.pcriot.com/Add-ons/tvalacarta-xbmc-addon-gotham-3.9.99.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -73,10 +91,10 @@ def TValacarta():
 	
 	
 def Kmedia():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.kmediatorrent')):
-		return
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.kmediatorrent')):
+	#	return
 		
-	url = "https://www.dropbox.com/s/51cgu4alyt5rqkz/plugin.video.kmediatorrent-2.3.4.zip?dl=1"
+	url = "http://shadrach.pcriot.com/Add-ons/plugin.video.kmediatorrent-2.3.7.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -93,10 +111,10 @@ def Kmedia():
 	
 	
 def Mashup():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.movie25')):
-		return
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.movie25')):
+	#	return
 		
-	url = "https://github.com/Mafarricos/Mafarricos-modded-xbmc-addons/blob/master/repo/plugin.video.movie25/plugin.video.movie25-1.4.2.zip?raw=true"
+	url = "http://shadrach.pcriot.com/Add-ons/plugin.video.movie25-1.4.2.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -113,10 +131,10 @@ def Mashup():
 	
 	
 def Streamnation():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.streamnation')):
-		return
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.streamnation')):
+	#	return
 		
-	url = "https://www.dropbox.com/s/xxvn5md2yczsb3e/plugin.video.streamnation-0.7.2.zip?dl=1"
+	url = "http://shadrach.pcriot.com/Add-ons/plugin.video.streamnation-0.7.2.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -133,10 +151,10 @@ def Streamnation():
 	
 	
 def BBC():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'service.bbclivefootballscores')):
-		return
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'service.bbclivefootballscores')):
+	#	return
 		
-	url = "https://github.com/elParaguayo/service.bbclivefootballscores/releases/download/v0.3.0RC/service.bbclivefootballscores.v0.3.0rc.zip"
+	url = "http://shadrach.pcriot.com/Add-ons/service.bbclivefootballscores.v0.3.0rc.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	

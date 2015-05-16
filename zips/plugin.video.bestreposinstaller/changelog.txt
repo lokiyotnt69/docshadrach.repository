@@ -1,38 +1,47 @@
+﻿v1.4.0
+- Ahora por defecto se muestra este changelog con cada actualización
+- Cambio de servidor para todos los add-ons y repositorios
+- Actualizado el enlace a KMediaTorrent ver 2.3.7
+- Actualizados algunos repositorios a su última versión
+- Retirado repositorio "iWillFollo"
+- Agregada última actualización de SportsDevil (2015-05-02) en la pestaña PLUS
+- Correcciones varias
+
 v1.3.4
 - Solucionado un problema con el nombre de la carpeta de KMediaTorrent
 
 v1.3.3
-- Actualizado el enlace a tvalacarta versi�n 3.9.99
-- Actualizado el enlace a KMediaTorrent versi�n 2.3.4
+- Actualizado el enlace a tvalacarta ver 3.9.99
+- Actualizado el enlace a KMediaTorrent ver 2.3.4
 
 v1.3.2
 - Corregido enlace al repositorio de lambda.
 
 v1.3.1
-- Actualizado el enlace a pelisalacarta versi�n 3.9.99
+- Actualizado el enlace a pelisalacarta ver 3.9.99
 
 v1.3.0
 - Se reemplaza "Pulsar Unofficial Repo" por "Kodi underground"
-- A�adido repositorio "Jas0npc Repository" (The Mutts Nuts)
-- A�adido el add-on StreamNation en la pesta�a PLUS
+- Añadido repositorio "Jas0npc Repository" (The Mutts Nuts)
+- Añadido el add-on StreamNation en la pestaña PLUS
 - Ahora cada vez que se ingresa al add-on aparecen todos los items desactivados
-- Se crea el archivo changelog.txt que acompa�a al add-on
+- Se crea el archivo changelog.txt que acompaña al add-on
 
 v1.2.1
-- Correcci�n de varios enlaces
+- Corrección de varios enlaces
 
 v1.2.0
-- Retirado repositorio "tknorris Beta" (Trakt ya tiene actualizaci�n oficial)
-- A�adido repositorio "iWillFollo" (SportsDevil)
+- Retirado repositorio "tknorris Beta" (Trakt ya tiene actualización oficial)
+- Añadido repositorio "iWillFollo" (SportsDevil)
 - Corregido enlace al repositorio de TheHighway
-- Ahora la configuraci�n por defecto es todo deseleccionado.
-- Nueva pesta�a PLUS, que da la posibilidad de instalar add-ons hu�rfanos (latinototal, pelisalacarta, etc)
+- Ahora la configuración por defecto es todo deseleccionado
+- Nueva pestaña PLUS, que da la posibilidad de instalar add-ons huérfanos (latinototal, pelisalacarta, etc)
 
 v1.1.0
-- A�adido repositorio "anonymous" (K0di Tools)
-- A�adido repositorio "tknorris Beta" (Trakt beta)
+- Añadido repositorio "anonymous" (K0di Tools)
+- Añadido repositorio "tknorris Beta" (Trakt beta)
 - Corregido enlace al repositorio de Shani
 - Ahora se muestra una barra de progreso
 
 v1.0.0
-- Versi�n inicial
+- Versión inicial
