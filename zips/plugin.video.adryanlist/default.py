@@ -72,6 +72,8 @@ def Repo():
 
 Repo()
 
+
+
 resolve_url=['180upload.com', 'allmyvideos.net', 'bestreams.net', 'clicknupload.com', 'cloudzilla.to', 'movshare.net', 'novamov.com', 'nowvideo.sx', 'videoweed.es', 'daclips.in', 'datemule.com', 'fastvideo.in', 'faststream.in', 'filehoot.com', 'filenuke.com', 'sharesix.com', 'docs.google.com', 'plus.google.com', 'picasaweb.google.com', 'gorillavid.com', 'gorillavid.in', 'grifthost.com', 'hugefiles.net', 'ipithos.to', 'ishared.eu', 'kingfiles.net', 'mail.ru', 'my.mail.ru', 'videoapi.my.mail.ru', 'mightyupload.com', 'mooshare.biz', 'movdivx.com', 'movpod.net', 'movpod.in', 'movreel.com', 'mrfile.me', 'nosvideo.com', 'openload.io', 'played.to', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'primeshare.tv', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'sharerepo.com', 'stagevu.com', 'streamcloud.eu', 'streamin.to', 'thefile.me', 'thevideo.me', 'tusfiles.net', 'uploadc.com', 'zalaa.com', 'uploadrocket.net', 'uptobox.com', 'v-vids.com', 'veehd.com', 'vidbull.com', 'videomega.tv', 'vidplay.net', 'vidspot.net', 'vidto.me', 'vidzi.tv', 'vimeo.com', 'vk.com', 'vodlocker.com', 'xfileload.com', 'xvidstage.com', 'zettahost.tv']
 g_ignoreSetResolved=['plugin.video.dramasonline','plugin.video.f4mTester','plugin.video.shahidmbcnet','plugin.video.SportsDevil','plugin.stream.vaughnlive.tv','plugin.video.ZemTV-shani']
 
@@ -113,10 +115,19 @@ debug = addon.getSetting('debug')
 if os.path.exists(favorites)==True:
     FAV = open(favorites).read()
 else: FAV = []
+
+SOURCES = [{"description": ": Lista de Canales para el Livestreamspro :", "title": "AdryanList ", "url": "http://adryanlist.info", "fanart": "http://i.imgur.com/7izulmv.jpg", "genre": "Tv Live", "date": "13.02.2015", "credits": "adryan", "thumbnail": "http://i.imgur.com/MWSXNtp.png"}]
+
+# http://i.imgur.com/GyK9PGj.jpg
+# http://i.imgur.com/eklZFBE.png
+
+
+    
+"""
 if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
-
+"""
 
 def addon_log(string):
     if debug == 'true':
@@ -136,203 +147,56 @@ def makeRequest(url, headers=None):
             addon_log('URL: '+url)
             if hasattr(e, 'code'):
                 addon_log('We failed with error code - %s.' % e.code)
-                xbmc.executebuiltin("XBMC.Notification(Adryan List,We failed with error code - "+str(e.code)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(AdryanList,We failed with error code - "+str(e.code)+",10000,"+icon+")")
             elif hasattr(e, 'reason'):
                 addon_log('We failed to reach a server.')
                 addon_log('Reason: %s' %e.reason)
-                xbmc.executebuiltin("XBMC.Notification(Adryan List,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(AdryanList,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
 
 
 def getSources():
         if os.path.exists(favorites) == True:
-            addDir('Favorites','url',4,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
-        if addon.getSetting("browse_xml_database") == "true":
-            addDir('XML Database','http://xbmcplus.xb.funpic.de/www-data/filesystem/',15,icon,FANART,'','','','')
-        if addon.getSetting("browse_community") == "true":
-            addDir('Community Files','community_files',16,icon,FANART,'','','','')
-        if os.path.exists(history) == True:
-            addDir('Search History','history',25,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
-        if addon.getSetting("searchyt") == "true":
-            addDir('Search:Youtube','youtube',25,icon,FANART,'','','','')
-        if addon.getSetting("searchDM") == "true":
-            addDir('Search:dailymotion','dmotion',25,icon,FANART,'','','','')
-        if addon.getSetting("PulsarM") == "true":
-            addDir('Pulsar:IMDB','IMDBidplay',27,icon,FANART,'','','','')            
-        if os.path.exists(source_file)==True:
-            sources = json.loads(open(source_file,"r").read())
-            #print 'sources',sources
-            if len(sources) > 1:
-                for i in sources:
-                    ## for pre 1.0.8 sources
-                    if isinstance(i, list):
-                        addDir(i[0].encode('utf-8'),i[1].encode('utf-8'),1,icon,FANART,'','','','','source')
-                    else:
-                        thumb = icon
-                        fanart = FANART
-                        desc = ''
-                        date = ''
-                        credits = ''
-                        genre = ''
-                        if i.has_key('thumbnail'):
-                            thumb = i['thumbnail']
-                        if i.has_key('fanart'):
-                            fanart = i['fanart']
-                        if i.has_key('description'):
-                            desc = i['description']
-                        if i.has_key('date'):
-                            date = i['date']
-                        if i.has_key('genre'):
-                            genre = i['genre']
-                        if i.has_key('credits'):
-                            credits = i['credits']
-                        addDir(i['title'].encode('utf-8'),i['url'].encode('utf-8'),1,thumb,fanart,desc,genre,date,credits,'source')
-
+            FAV = open(favorites).read()
+            if FAV == "[]":
+                os.remove(favorites)
             else:
-                if len(sources) == 1:
-                    if isinstance(sources[0], list):
-                        getData(sources[0][1].encode('utf-8'),FANART)
-                    else:
-                        getData(sources[0]['url'], sources[0]['fanart'])
+                addDir('[COLOR yellow][B]- MIS CANALES FAVORITOS[/COLOR][/B]','url',4,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
+                addDir('','',100,'',FANART,'','','','')
 
+        sources = SOURCES
+        #print 'sources',sources
+        if len(sources) > 1:
+            for i in sources:
+                ## for pre 1.0.8 sources
+                if isinstance(i, list):
+                    addDir(i[0].encode('utf-8'),i[1].encode('utf-8'),1,icon,FANART,'','','','','source')
+                else:
+                    thumb = icon
+                    fanart = FANART
+                    desc = ''
+                    date = ''
+                    credits = ''
+                    genre = ''
+                    if i.has_key('thumbnail'):
+                        thumb = i['thumbnail']
+                    if i.has_key('fanart'):
+                        fanart = i['fanart']
+                    if i.has_key('description'):
+                        desc = i['description']
+                    if i.has_key('date'):
+                        date = i['date']
+                    if i.has_key('genre'):
+                        genre = i['genre']
+                    if i.has_key('credits'):
+                        credits = i['credits']
+                    addDir(i['title'].encode('utf-8'),i['url'].encode('utf-8'),1,thumb,fanart,desc,genre,date,credits,'source')
 
-def addSource(url=None):
-        if url is None:
-            if not addon.getSetting("new_file_source") == "":
-               source_url = addon.getSetting('new_file_source').decode('utf-8')
-            elif not addon.getSetting("new_url_source") == "":
-               source_url = addon.getSetting('new_url_source').decode('utf-8')
         else:
-            source_url = url
-        if source_url == '' or source_url is None:
-            return
-        addon_log('Adding New Source: '+source_url.encode('utf-8'))
-
-        media_info = None
-        #print 'source_url',source_url
-        data = getSoup(source_url)
-        print 'source_url',source_url
-        if isinstance(data,BeautifulSOAP):
-            if data.find('channels_info'):
-                media_info = data.channels_info
-            elif data.find('items_info'):
-                media_info = data.items_info
-        if media_info:
-            source_media = {}
-            source_media['url'] = source_url
-            try: source_media['title'] = media_info.title.string
-            except: pass
-            try: source_media['thumbnail'] = media_info.thumbnail.string
-            except: pass
-            try: source_media['fanart'] = media_info.fanart.string
-            except: pass
-            try: source_media['genre'] = media_info.genre.string
-            except: pass
-            try: source_media['description'] = media_info.description.string
-            except: pass
-            try: source_media['date'] = media_info.date.string
-            except: pass
-            try: source_media['credits'] = media_info.credits.string
-            except: pass
-        else:
-            if '/' in source_url:
-                nameStr = source_url.split('/')[-1].split('.')[0]
-            if '\\' in source_url:
-                nameStr = source_url.split('\\')[-1].split('.')[0]
-            if '%' in nameStr:
-                nameStr = urllib.unquote_plus(nameStr)
-            keyboard = xbmc.Keyboard(nameStr,'Displayed Name, Rename?')
-            keyboard.doModal()
-            if (keyboard.isConfirmed() == False):
-                return
-            newStr = keyboard.getText()
-            if len(newStr) == 0:
-                return
-            source_media = {}
-            source_media['title'] = newStr
-            source_media['url'] = source_url
-            source_media['fanart'] = fanart
-
-        if os.path.exists(source_file)==False:
-            source_list = []
-            source_list.append(source_media)
-            b = open(source_file,"w")
-            b.write(json.dumps(source_list))
-            b.close()
-        else:
-            sources = json.loads(open(source_file,"r").read())
-            sources.append(source_media)
-            b = open(source_file,"w")
-            b.write(json.dumps(sources))
-            b.close()
-        addon.setSetting('new_url_source', "")
-        addon.setSetting('new_file_source', "")
-        xbmc.executebuiltin("XBMC.Notification(Adryan List,New source added.,5000,"+icon+")")
-        if not url is None:
-            if 'xbmcplus.xb.funpic.de' in url:
-                xbmc.executebuiltin("XBMC.Container.Update(%s?mode=14,replace)" %sys.argv[0])
-            elif 'community-links' in url:
-                xbmc.executebuiltin("XBMC.Container.Update(%s?mode=10,replace)" %sys.argv[0])
-        else: addon.openSettings()
-
-
-def rmSource(name):
-        sources = json.loads(open(source_file,"r").read())
-        for index in range(len(sources)):
-            if isinstance(sources[index], list):
-                if sources[index][0] == name:
-                    del sources[index]
-                    b = open(source_file,"w")
-                    b.write(json.dumps(sources))
-                    b.close()
-                    break
-            else:
-                if sources[index]['title'] == name:
-                    del sources[index]
-                    b = open(source_file,"w")
-                    b.write(json.dumps(sources))
-                    b.close()
-                    break
-        xbmc.executebuiltin("XBMC.Container.Refresh")
-
-
-
-def get_xml_database(url, browse=False):
-        if url is None:
-            url = 'http://xbmcplus.xb.funpic.de/www-data/filesystem/'
-        soup = BeautifulSoup(makeRequest(url), convertEntities=BeautifulSoup.HTML_ENTITIES)
-        for i in soup('a'):
-            href = i['href']
-            if not href.startswith('?'):
-                name = i.string
-                if name not in ['Parent Directory', 'recycle_bin/']:
-                    if href.endswith('/'):
-                        if browse:
-                            addDir(name,url+href,15,icon,fanart,'','','')
-                        else:
-                            addDir(name,url+href,14,icon,fanart,'','','')
-                    elif href.endswith('.xml'):
-                        if browse:
-                            addDir(name,url+href,1,icon,fanart,'','','','','download')
-                        else:
-                            if os.path.exists(source_file)==True:
-                                if name in SOURCES:
-                                    addDir(name+' (in use)',url+href,11,icon,fanart,'','','','','download')
-                                else:
-                                    addDir(name,url+href,11,icon,fanart,'','','','','download')
-                            else:
-                                addDir(name,url+href,11,icon,fanart,'','','','','download')
-
-
-def getCommunitySources(browse=False):
-        url = 'http://community-links.googlecode.com/svn/trunk/'
-        soup = BeautifulSoup(makeRequest(url), convertEntities=BeautifulSoup.HTML_ENTITIES)
-        files = soup('ul')[0]('li')[1:]
-        for i in files:
-            name = i('a')[0]['href']
-            if browse:
-                addDir(name,url+name,1,icon,fanart,'','','','','download')
-            else:
-                addDir(name,url+name,11,icon,fanart,'','','','','download')
+            if len(sources) == 1:
+                if isinstance(sources[0], list):
+                    getData(sources[0][1].encode('utf-8'),FANART)
+                else:
+                    getData(sources[0]['url'], sources[0]['fanart'])
 
 
 def getSoup(url,data=None):
@@ -442,8 +306,8 @@ def getData(url,fanart):
             getItems(soup('item'),fanart)
     else:
         parse_m3u(soup)
-# borrow from https://github.com/enen92/P2P-Streams-XBMC/blob/master/plugin.video.p2p-streams/resources/core/livestreams.py
-# This will not go through the getItems functions ( means you must have ready to play url, no regex)
+
+
 def parse_m3u(data):
     content = data.rstrip()
     match = re.compile(r'#EXTINF:(.+?),(.*?)[\n\r]+([^\n]+)').findall(content)
@@ -478,6 +342,8 @@ def parse_m3u(data):
                 addLink(url[0], channel_name,thumbnail,'','','','','',None,regexs,total)
                 continue
         addLink(stream_url, channel_name,thumbnail,'','','','','',None,'',total)
+
+
 def getChannelItems(name,url,fanart):
         soup = getSoup(url)
         channel_list = soup.find('channel', attrs={'name' : name.decode('utf-8')})
@@ -862,7 +728,8 @@ def parse_regex(reg_item):
                 except:
                     regexs = None
                     addon_log('regex Error: '+name.encode('utf-8', 'ignore'))
-#copies from lamda's implementation
+
+
 def get_ustream(url):
     try:
         for i in range(1, 51):
@@ -1126,19 +993,20 @@ def getRegexParsed(regexs, url,cookieJar=None,forCookieJarOnly=False,recursiveCa
         else:
         	return url,setresolved
 
-            
-        
+                 
 def getmd5(t):
     import hashlib
     h=hashlib.md5()
     h.update(t)
     return h.hexdigest()
 
+
 def decrypt_vaughnlive(encrypted):
     retVal=""
     for val in encrypted.split(':'):
         retVal+=chr(int(val.replace("0m0",""))/84/5)
     return retVal
+
 
 def playmedia(media_url):
     try:
@@ -1185,7 +1053,8 @@ def get_saw_rtmp(page_value, referer=None):
 
     
     return rtmp+' playpath='+playpath +' pageUrl='+page_url
-    
+
+
 def get_leton_rtmp(page_value, referer=None):
     if referer:
         referer=[('Referer',referer)]
@@ -1204,6 +1073,7 @@ def get_leton_rtmp(page_value, referer=None):
     ret= 'rtmp://' + str(a) + '.' + str(b) + '.' + str(c) + '.' + str(d) + v;
     return ret
 
+
 def createM3uForDash(url,useragent=None):
     str='#EXTM3U'
     str+='\n#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=361816'
@@ -1213,6 +1083,7 @@ def createM3uForDash(url,useragent=None):
     SaveToFile(source_file,str)
     #return 'C:/Users/shani/Downloads/test.m3u8'
     return source_file
+
 
 def SaveToFile(file_name,page_data,append=False):
     if append:
@@ -1224,12 +1095,14 @@ def SaveToFile(file_name,page_data,append=False):
         f.write(page_data)
         f.close()
         return ''
+
     
 def LoadFile(file_name):
 	f=open(file_name,'rb')
 	d=f.read()
 	f.close()
 	return d
+
     
 def get_packed_iphonetv_url(page_data):
 	import re,base64,urllib; 
@@ -1242,6 +1115,7 @@ def get_packed_iphonetv_url(page_data):
 		s=urllib.unquote(s); 
 	print s
 	return s
+
 
 def get_ferrari_url(page_data):
     print 'get_dag_url2',page_data
@@ -1277,6 +1151,7 @@ def get_dag_url(page_data):
     final_url = final_url.replace(' ', '%20')
     return final_url
 
+
 def re_me(data, re_patten):
     match = ''
     m = re.search(re_patten, data)
@@ -1285,6 +1160,7 @@ def re_me(data, re_patten):
     else:
         match = ''
     return match
+
 
 def revist_dag(page_data):
     final_url = ''
@@ -1317,6 +1193,7 @@ def get_unwise( str_eval):
     except: traceback.print_exc(file=sys.stdout)
     #print 'unpacked',page_value
     return page_value
+
     
 def unwise_func( w, i, s, e):
     lIll = 0;
@@ -1365,6 +1242,7 @@ def unwise_func( w, i, s, e):
     else:
         print 'FINISHED'
         return ret
+
     
 def get_unpacked( page_value, regex_for_text='', iterations=1, total_iteration=1):
     try:        
@@ -1382,6 +1260,7 @@ def get_unpacked( page_value, regex_for_text='', iterations=1, total_iteration=1
         page_value=page_value.replace('sav1live.tv','sawlive.tv') #quick fix some bug somewhere
         print 'sav1 unpacked',page_value
     return page_value
+
 
 def unpack(sJavascript,iteration=1, totaliterations=2  ):
     print 'iteration',iteration
@@ -1446,6 +1325,7 @@ def unpack(sJavascript,iteration=1, totaliterations=2  ):
 #        print 'final res for this iteration is',iteration
         return unpack(sUnpacked1,iteration+1)#.replace('\\', ''),iteration)#.replace('\\', '');#unpack(sUnpacked.replace('\\', ''))
 
+
 def __unpack(p, a, c, k, e, d, iteration,v=1):
 
     #with open('before file'+str(iteration)+'.js', "wb") as filewriter:
@@ -1497,6 +1377,7 @@ def findAndReplaceWord(source_str, word_to_find,replace_with):
         source_str=''.join(new_string)
     return source_str        
 
+
 def __itoa(num, radix):
 #    print 'num red',num, radix
     result = ""
@@ -1505,6 +1386,7 @@ def __itoa(num, radix):
         result = "0123456789abcdefghijklmnopqrstuvwxyz"[num % radix] + result
         num /= radix
     return result
+
 	
 def __itoaNew(cc, a):
     aa="" if cc < a else __itoaNew(int(cc / a),a) 
@@ -1529,8 +1411,8 @@ def saveCookieJar(cookieJar,COOKIEFILE):
 		cookieJar.save(complete_path,ignore_discard=True)
 	except: pass
 
-def getCookieJar(COOKIEFILE):
 
+def getCookieJar(COOKIEFILE):
 	cookieJar=None
 	if COOKIEFILE:
 		try:
@@ -1544,6 +1426,7 @@ def getCookieJar(COOKIEFILE):
 		cookieJar = cookielib.LWPCookieJar()
 	
 	return cookieJar
+
     
 def doEval(fun_call,page_data,Cookie_Jar):
     ret_val=''
@@ -1564,6 +1447,7 @@ def doEval(fun_call,page_data,Cookie_Jar):
     print ret_val
     #exec('ret_val=1+1')
     return str(ret_val)
+
     
 def processRecaptcha(url):
 	html_text=getUrl(url)
@@ -1602,9 +1486,8 @@ def processRecaptcha(url):
 		os.remove(local_captcha)
 	return captcha_reload_response_chall ,solution
 
+
 def getUrl(url, cookieJar=None,post=None, timeout=20, headers=None):
-
-
 	cookie_handler = urllib2.HTTPCookieProcessor(cookieJar)
 	opener = urllib2.build_opener(cookie_handler, urllib2.HTTPBasicAuthHandler(), urllib2.HTTPHandler())
 	#opener = urllib2.install_opener(opener)
@@ -1619,6 +1502,7 @@ def getUrl(url, cookieJar=None,post=None, timeout=20, headers=None):
 	response.close()
 	return link;
 
+
 def get_decode(str,reg=None):
 	if reg:
 		str=re.findall(reg, str)[0]
@@ -1630,6 +1514,7 @@ def get_decode(str,reg=None):
 	print t
 	return t
 
+
 def javascriptUnEscape(str):
 	js=re.findall('unescape\(\'(.*?)\'',str)
 	print 'js',js
@@ -1640,6 +1525,8 @@ def javascriptUnEscape(str):
 	return str
 
 iid=0
+
+
 def askCaptcha(m,html_page, cookieJar):
     global iid
     iid+=1
@@ -1682,6 +1569,7 @@ def askCaptcha(m,html_page, cookieJar):
     solution = solver.get()
     return solution
     
+
 class InputWindow(xbmcgui.WindowDialog):
     def __init__(self, *args, **kwargs):
         self.cptloc = kwargs.get('captcha')
@@ -1700,13 +1588,16 @@ class InputWindow(xbmcgui.WindowDialog):
         self.close()
         return False
     
+
 def getEpocTime():
     import time
     return str(int(time.time()*1000))
 
+
 def getEpocTime2():
     import time
     return str(int(time.time()))
+
 
 def get_params():
         param=[]
@@ -1727,30 +1618,32 @@ def get_params():
 
 
 def getFavorites():
-        items = json.loads(open(favorites).read())
-        total = len(items)
-        for i in items:
-            name = i[0]
-            url = i[1]
-            iconimage = i[2]
-            try:
-                fanArt = i[3]
-                if fanArt == None:
-                    raise
-            except:
-                if addon.getSetting('use_thumb') == "true":
-                    fanArt = iconimage
+        if os.path.exists(favorites)==True:
+            items = json.loads(open(favorites).read())
+            total = len(items)
+            for i in items:
+                name = i[0]
+                url = i[1]
+                iconimage = i[2]
+                try:
+                    fanArt = i[3]
+                    if fanArt == None:
+                        raise
+                except:
+                    if addon.getSetting('use_thumb') == "true":
+                        fanArt = iconimage
+                    else:
+                        fanArt = fanart
+                try: playlist = i[5]
+                except: playlist = None
+                try: regexs = i[6]
+                except: regexs = None
+    
+                if i[4] == 0:
+                    addLink(url,name,iconimage,fanArt,'','','','fav',playlist,regexs,total)
                 else:
-                    fanArt = fanart
-            try: playlist = i[5]
-            except: playlist = None
-            try: regexs = i[6]
-            except: regexs = None
-
-            if i[4] == 0:
-                addLink(url,name,iconimage,fanArt,'','','','fav',playlist,regexs,total)
-            else:
-                addDir(name,url,i[4],iconimage,fanart,'','','','','fav')
+                    addDir(name,url,i[4],iconimage,fanart,'','','','','fav')
+        else: pass
 
 
 def addFavorite(name,url,iconimage,fanart,mode,playlist=None,regexs=None):
@@ -1787,6 +1680,7 @@ def rmFavorite(name):
                 break
         xbmc.executebuiltin("XBMC.Container.Refresh")
 
+
 def urlsolver(url):
     if addon.getSetting('Updatecommonresolvers') == 'true':
         l = os.path.join(home,'genesisresolvers.py')
@@ -1799,12 +1693,12 @@ def urlsolver(url):
     try:
         import genesisresolvers
     except Exception:
-        xbmc.executebuiltin("XBMC.Notification(Adryan List,Please enable Update Commonresolvers to Play in Settings. - ,10000)")
+        xbmc.executebuiltin("XBMC.Notification(AdryanList,Please enable Update Commonresolvers to Play in Settings. - ,10000)")
 
     resolved=genesisresolvers.get(url).result
     if url == resolved or resolved is None:
         #import
-        xbmc.executebuiltin("XBMC.Notification(Adryan List,Using Urlresolver module.. - ,5000)")
+        xbmc.executebuiltin("XBMC.Notification(AdryanList,Using Urlresolver module.. - ,5000)")
         import urlresolver
         host = urlresolver.HostedMediaFile(url)
         if host:
@@ -1825,6 +1719,8 @@ def urlsolver(url):
         else:
             resolver = resolved
     return resolver
+
+
 def play_playlist(name, mu_playlist):
         import urlparse
         if addon.getSetting('ask_playlist_items') == 'true':
@@ -1862,12 +1758,12 @@ def play_playlist(name, mu_playlist):
 
 def download_file(name, url):
         if addon.getSetting('save_location') == "":
-            xbmc.executebuiltin("XBMC.Notification('Adryan List','Choose a location to save files.',15000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification('AdryanList','Choose a location to save files.',15000,"+icon+")")
             addon.openSettings()
         params = {'url': url, 'download_path': addon.getSetting('save_location')}
         downloader.download(name, params)
         dialog = xbmcgui.Dialog()
-        ret = dialog.yesno('Adryan List', 'Do you want to add this file as a source?')
+        ret = dialog.yesno('AdryanList', 'Do you want to add this file as a source?')
         if ret:
             addSource(os.path.join(addon.getSetting('save_location'), name))
 
@@ -1891,14 +1787,16 @@ def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcon
                 contextMenu.append(('Download','XBMC.RunPlugin(%s?url=%s&mode=9&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
             elif showcontext == 'fav':
-                contextMenu.append(('Remove from Adryan List Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
+                contextMenu.append(('Remove from AdryanList Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(name))))
             if not name in FAV:
-                contextMenu.append(('Add to Adryan List Favorites','XBMC.RunPlugin(%s?mode=5&name=%s&url=%s&iconimage=%s&fanart=%s&fav_mode=%s)'
+                contextMenu.append(('Add to AdryanList Favorites','XBMC.RunPlugin(%s?mode=5&name=%s&url=%s&iconimage=%s&fanart=%s&fav_mode=%s)'
                          %(sys.argv[0], urllib.quote_plus(name), urllib.quote_plus(url), urllib.quote_plus(iconimage), urllib.quote_plus(fanart), mode)))
             liz.addContextMenuItems(contextMenu)
         ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
         return ok
+
+
 def ytdl_download(url,title,media_type='video'):
     # play in xbmc while playing go back to contextMenu(c) to "!!Download!!"
     # Trial yasceen: seperate |User-Agent=
@@ -1922,6 +1820,7 @@ def ytdl_download(url,title,media_type='video'):
     else:
         xbmc.executebuiltin("XBMC.Notification(DOWNLOAD,First Play [COLOR yellow]WHILE playing download[/COLOR] ,10000)")
  
+
 def search(site_name,search_term=None):
     thumbnail=''
     if os.path.exists(history) == False or addon.getSetting('clearseachhistory')=='true':
@@ -1998,19 +1897,25 @@ def search(site_name,search_term=None):
                 SaveToFile(history,page_data,append=True)
                 return url
         else:
-            xbmc.executebuiltin("XBMC.Notification(Adryan List,No IMDB match found ,7000,"+icon+")")
-## Lunatixz PseudoTV feature
+            xbmc.executebuiltin("XBMC.Notification(AdryanList,No IMDB match found ,7000,"+icon+")")
+
+
 def ascii(string):
     if isinstance(string, basestring):
         if isinstance(string, unicode):
            string = string.encode('ascii', 'ignore')
     return string
+
+
 def uni(string, encoding = 'utf-8'):
     if isinstance(string, basestring):
         if not isinstance(string, unicode):
             string = unicode(string, encoding, 'ignore')
     return string
+
+
 def removeNonAscii(s): return "".join(filter(lambda x: ord(x)<128, s))
+
 
 def sendJSON( command):
     data = ''
@@ -2021,6 +1926,7 @@ def sendJSON( command):
 
     return uni(data)
     
+
 def pluginquerybyJSON(url):
     json_query = uni('{"jsonrpc":"2.0","method":"Files.GetDirectory","params":{"directory":"%s","media":"video","properties":["thumbnail","title","year","dateadded","fanart","rating","season","episode","studio"]},"id":1}') %url
 
@@ -2060,6 +1966,7 @@ def pluginquerybyJSON(url):
         else:
             addDir(name,url,53,thumbnail,fanart,description,'',date,'')
             #xbmc.executebuiltin("Container.SetViewMode(500)")
+
 
 def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlist,regexs,total,setCookie=""):
         #print 'url,name',url,name
@@ -2129,7 +2036,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
             contextMenu = []
             if showcontext == 'fav':
                 contextMenu.append(
-                    ('Remove from Adryan List Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
+                    ('Remove from AdryanList Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
                      %(sys.argv[0], urllib.quote_plus(name)))
                      )
             elif not name in FAV:
@@ -2141,7 +2048,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                     fav_params += 'playlist='+urllib.quote_plus(str(playlist).replace(',','||'))
                 if regexs:
                     fav_params += "&regexs="+regexs
-                contextMenu.append(('Add to Adryan List Favorites','XBMC.RunPlugin(%s)' %fav_params))
+                contextMenu.append(('Add to AdryanList Favorites','XBMC.RunPlugin(%s)' %fav_params))
             liz.addContextMenuItems(contextMenu)
         if not playlist is None:
             if addon.getSetting('add_playlist') == "false":
@@ -2155,6 +2062,8 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
         ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,totalItems=total)
         #print 'added',name
         return ok
+
+
 def playsetresolved(url,name,iconimage,setresolved=True):
     if setresolved:
         liz = xbmcgui.ListItem(name, iconImage=iconimage)
@@ -2339,7 +2248,6 @@ elif mode==12:
         print 'Not setting setResolvedUrl'
         xbmc.executebuiltin('XBMC.RunPlugin('+url+')')
 
-
 elif mode==13:
     addon_log("play_playlist")
     play_playlist(name, playlist)
@@ -2365,15 +2273,17 @@ elif mode==17:
     if url:
         playsetresolved(url,name,iconimage,setresolved)
     else:
-        xbmc.executebuiltin("XBMC.Notification(Adryan List,Failed to extract regex. - "+"this"+",4000,"+icon+")")
+        xbmc.executebuiltin("XBMC.Notification(AdryanList,Failed to extract regex. - "+"this"+",4000,"+icon+")")
+
 elif mode==18:
     addon_log("youtubedl")
     try:
         import youtubedl
     except Exception:
-        xbmc.executebuiltin("XBMC.Notification(Adryan List,Please [COLOR yellow]install Youtube-dl[/COLOR] module ,10000,"")")
+        xbmc.executebuiltin("XBMC.Notification(AdryanList,Please [COLOR yellow]install Youtube-dl[/COLOR] module ,10000,"")")
     stream_url=youtubedl.single_YD(url)
     playsetresolved(stream_url,name,iconimage)
+
 elif mode==19:
 	addon_log("Genesiscommonresolvers")
 	playsetresolved (urlsolver(url),name,iconimage,True)	
@@ -2381,26 +2291,34 @@ elif mode==19:
 elif mode==21:
     addon_log("download current file using youtube-dl service")
     ytdl_download('',name,'video')
+
 elif mode==23:
     addon_log("get info then download")
     ytdl_download(url,name,'video') 
+
 elif mode==24:
     addon_log("Audio only youtube download")
     ytdl_download(url,name,'audio')
+
 elif mode==25:
     addon_log("YouTube/DMotion")
     search(url)
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
 elif mode==26:
     addon_log("YouTube/DMotion From Search History")
     name = name.split(':')
     search(url,search_term=name[1])
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
 elif mode==27:
     addon_log("Using IMDB id to play in Pulsar")
     pulsarIMDB=search(url)
     xbmc.Player().play(pulsarIMDB) 
+
 elif mode==53:
     addon_log("Requesting JSON-RPC Items")
     pluginquerybyJSON(url)
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))    
+    xbmcplugin.endOfDirectory(int(sys.argv[1]))
+    
+elif mode==100: pass  
