@@ -112,11 +112,12 @@ functions_dir = profile
 
 downloader = downloader.SimpleDownloader()
 debug = addon.getSetting('debug')
-if os.path.exists(favorites)==True:
+
+if os.path.exists(favorites) == True:
     FAV = open(favorites).read()
 else: FAV = []
 
-SOURCES = [{"description": ": Lista de Canales para el Livestreamspro :", "title": "AdryanList ", "url": "http://adryanlist.info", "fanart": "http://i.imgur.com/7izulmv.jpg", "genre": "Tv Live", "date": "13.02.2015", "credits": "adryan", "thumbnail": "http://i.imgur.com/MWSXNtp.png"}]
+SOURCES = [{"url": "http://adryanlist.info", "fanart": "http://i.imgur.com/GyK9PGj.jpg"}]
 
 # http://i.imgur.com/GyK9PGj.jpg
 # http://i.imgur.com/eklZFBE.png
@@ -165,44 +166,16 @@ def getSources():
 
         sources = SOURCES
         #print 'sources',sources
-        if len(sources) > 1:
-            for i in sources:
-                ## for pre 1.0.8 sources
-                if isinstance(i, list):
-                    addDir(i[0].encode('utf-8'),i[1].encode('utf-8'),1,icon,FANART,'','','','','source')
-                else:
-                    thumb = icon
-                    fanart = FANART
-                    desc = ''
-                    date = ''
-                    credits = ''
-                    genre = ''
-                    if i.has_key('thumbnail'):
-                        thumb = i['thumbnail']
-                    if i.has_key('fanart'):
-                        fanart = i['fanart']
-                    if i.has_key('description'):
-                        desc = i['description']
-                    if i.has_key('date'):
-                        date = i['date']
-                    if i.has_key('genre'):
-                        genre = i['genre']
-                    if i.has_key('credits'):
-                        credits = i['credits']
-                    addDir(i['title'].encode('utf-8'),i['url'].encode('utf-8'),1,thumb,fanart,desc,genre,date,credits,'source')
-
-        else:
-            if len(sources) == 1:
-                if isinstance(sources[0], list):
-                    getData(sources[0][1].encode('utf-8'),FANART)
-                else:
-                    getData(sources[0]['url'], sources[0]['fanart'])
+        getData(sources[0]['url'], sources[0]['fanart'])
 
 
 def getSoup(url,data=None):
         print 'getsoup',url,data
         if url.startswith('http://') or url.startswith('https://'):
-            data = makeRequest(url)
+            try:
+                data = makeRequest(url)
+            except:
+                data = makeRequest(url)
             if re.search("#EXTM3U",data) or 'm3u' in url: 
                 print 'found m3u data',data
                 return data
@@ -1821,85 +1794,6 @@ def ytdl_download(url,title,media_type='video'):
         xbmc.executebuiltin("XBMC.Notification(DOWNLOAD,First Play [COLOR yellow]WHILE playing download[/COLOR] ,10000)")
  
 
-def search(site_name,search_term=None):
-    thumbnail=''
-    if os.path.exists(history) == False or addon.getSetting('clearseachhistory')=='true':
-        SaveToFile(history,'')
-        addon.setSetting("clearseachhistory","false")
-    if site_name == 'history' :
-        content = LoadFile(history)
-        match = re.compile('(.+?):(.*?)(?:\r|\n)').findall(content)
-
-        for name,search_term in match:
-            if 'plugin://' in search_term:
-                addLink(search_term, name,thumbnail,'','','','','',None,'',total=int(len(match)))
-            else:
-                addDir(name+':'+search_term,name,26,icon,FANART,'','','','')
-    if not search_term:    
-        keyboard = xbmc.Keyboard('','Enter Search Term')
-        keyboard.doModal()
-        if (keyboard.isConfirmed() == False):
-            return
-        search_term = keyboard.getText()
-        if len(search_term) == 0:
-            return        
-    search_term = search_term.replace(' ','+')
-    search_term = search_term.encode('utf-8')
-    if 'youtube' in site_name:
-        #youtube = youtube#Lana Del Rey
-        import _ytplist
-
-        search_res = {}
-        search_res = _ytplist.YoUTube('searchYT',youtube=search_term,max_page=4,nosave='nosave')
-        total = len(search_res)
-        for item in search_res:
-            try:
-                name = search_res[item]['title']
-                date= search_res[item]['date']
-                try:
-                    description = search_res[item]['desc']
-                except Exception:
-                    description = 'UNAVAIABLE'
-
-                url = 'plugin://plugin.video.youtube/play/?video_id=' + search_res[item]['url']
-                thumbnail ='http://img.youtube.com/vi/'+search_res[item]['url']+'/0.jpg'
-                addLink(url, name,thumbnail,'','','','','',None,'',total)
-            except Exception:
-            	addon_log( 'This item is ignored::')
-        page_data = site_name +':'+ search_term + '\n'
-        SaveToFile(os.path.join(profile,'history'),page_data,append=True)
-    elif 'dmotion' in site_name:
-        urlMain = "https://api.dailymotion.com" 
-        #youtube = youtube#Lana Del Rey
-        import _DMsearch
-        familyFilter = str(addon.getSetting('familyFilter'))
-        _DMsearch.listVideos(urlMain+"/videos?fields=description,duration,id,owner.username,taken_time,thumbnail_large_url,title,views_total&search="+search_term+"&sort=relevance&limit=100&family_filter="+familyFilter+"&localization=en_EN&page=1")
-    
-        page_data = site_name +':'+ search_term+ '\n'
-        SaveToFile(os.path.join(profile,'history'),page_data,append=True)        
-    elif 'IMDBidplay' in site_name:
-        urlMain = "http://www.omdbapi.com/?t=" 
-        url= urlMain+search_term
-
-        headers = dict({'User-Agent':'Mozilla/5.0 (Windows NT 6.3; rv:33.0) Gecko/20100101 Firefox/33.0','Referer': 'http://joker.org/','Accept-Encoding':'gzip, deflate','Content-Type': 'application/json;charset=utf-8','Accept': 'application/json, text/plain, */*'})
-    
-        r=requests.get(url,headers=headers)
-        data = r.json()
-        res = data['Response']
-        if res == 'True':
-            imdbID = data['imdbID']
-            name= data['Title'] + data['Released']
-            dialog = xbmcgui.Dialog()
-            ret = dialog.yesno('Check Movie Title', 'PLAY :: %s ?'%name)
-            if ret:
-                url = 'plugin://plugin.video.pulsar/movie/'+imdbID+'/play'
-                page_data = name +':'+ url+ '\n'
-                SaveToFile(history,page_data,append=True)
-                return url
-        else:
-            xbmc.executebuiltin("XBMC.Notification(AdryanList,No IMDB match found ,7000,"+icon+")")
-
-
 def ascii(string):
     if isinstance(string, basestring):
         if isinstance(string, unicode):
@@ -2069,7 +1963,7 @@ def playsetresolved(url,name,iconimage,setresolved=True):
         liz = xbmcgui.ListItem(name, iconImage=iconimage)
         liz.setInfo(type='Video', infoLabels={'Title':name})
         liz.setProperty("IsPlayable","true")
-        liz.setPath(url)
+        liz.setPath(str(url))
         xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
     else:
         xbmc.executebuiltin('XBMC.RunPlugin('+url+')')      
