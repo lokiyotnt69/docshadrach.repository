@@ -43,6 +43,185 @@ Repo()
 
 
 
+def MENU():
+    
+    addDir("[COLOR orange][B]CATEGORIAS:[/B][/COLOR]", "", "", "")
+    addDir("- Músicas del mundo", 'IRRELEVANTE', 4, "")
+    addDir("- Clásica", 'IRRELEVANTE', 5, "")
+    addDir("- Culturales", 'IRRELEVANTE', 6, "")
+    addDir("- Rock/Pop", 'IRRELEVANTE', 7, "")
+    addDir("- Radio 3 Extra", 'IRRELEVANTE', 8, "")
+    addDir("- Conciertos", 'IRRELEVANTE', 9, "")
+    addDir("- Electrónica/Experimental", 'IRRELEVANTE', 10, "")
+    addDir("- Jazz/Blues", 'IRRELEVANTE', 11, "")
+    addDir("- HipHop/Funk", 'IRRELEVANTE', 12, "")
+    addDir("", "", "", "")
+    addDir("[COLOR cyan][B]LISTAR TODOS LOS PROGRAMAS[/B]  [A-Z][/COLOR]  <--", 'IRRELEVANTE', 1, "")
+    addDir("[COLOR silver]--- [I]Escuchar Radio 3 en directo[/I] ---[/COLOR]", "http://radio3.rtveradio.cires21.com/radio3/mp3/icecast.audio?rnd=153691", 20, "")
+
+
+def CAT4():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/musicas-del-mundo/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+        
+def CAT5():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/clasica/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+        
+def CAT6():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/culturales/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+        
+def CAT7():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/rock-pop/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+        
+def CAT8():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/radio-3-extra/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+        
+def CAT9():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/conciertos/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+        
+def CAT10():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/electronica-experimental/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+        
+def CAT11():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/jazz-blues/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+        
+def CAT12():  
+     
+    url='http://www.rtve.es/alacarta/programas/radio-3/hiphop-funk/1/?emissionFilter=all'
+    
+    req = urllib2.Request(url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+    response = urllib2.urlopen(req)
+    link=response.read()
+    response.close()
+    
+    match = re.compile('id="urlAddFav(.+?)" value="/(.+?)"/>\r\n\t\t<input type="hidden" id=".+?" value="(.+?)"/>').findall(link)
+    
+    for id,direc,name in match:
+        
+        rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
+                 
+        addDir(name, rss, 2, "")
+            
 
 
 def PROGRAMAS():  
@@ -63,10 +242,11 @@ def PROGRAMAS():
             
             rss = "http://api.rtve.es/api/programas/" +str(id) + "/audios.rss"
                      
-            addDir(name, rss, 1, "")
+            addDir(name, rss, 2, "")
             
         page = page + 1
-        
+
+       
                                   
 def LISTADO_rss(url):  # MODE 1   
     req = urllib2.Request(url)
@@ -151,9 +331,49 @@ print "Name: " + str(name)
 
 if mode == None or url == None or len(url) < 1:
         print ""
-        PROGRAMAS()
-       
+        MENU()
+        
 elif mode == 1:
+        print "" + url
+        PROGRAMAS()
+
+elif mode == 4:
+        print "" + url
+        CAT4()
+        
+elif mode == 5:
+        print "" + url
+        CAT5()
+
+elif mode == 6:
+        print "" + url
+        CAT6()
+        
+elif mode == 7:
+        print "" + url
+        CAT7()
+        
+elif mode == 8:
+        print "" + url
+        CAT8()
+        
+elif mode == 9:
+        print "" + url
+        CAT9()
+        
+elif mode == 10:
+        print "" + url
+        CAT10()
+        
+elif mode == 11:
+        print "" + url
+        CAT11()
+        
+elif mode == 12:
+        print "" + url
+        CAT12()
+       
+elif mode == 2:
         print "" + url
         LISTADO_rss(url)
         
