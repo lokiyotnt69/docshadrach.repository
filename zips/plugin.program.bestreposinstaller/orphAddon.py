@@ -12,22 +12,22 @@ def ExtractAll(_in, _out):
 	return True
 
 
-def SportsDevil():
-
-    url = "http://shadrach.pcriot.com/Add-ons/plugin.video.SportsDevil-2015-05-02.zip"
-    addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
-    packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
-    
-    urllib.urlretrieve(url, packageFile)
-    ExtractAll(packageFile, addonsDir)
-        
-    try:
-        os.remove(packageFile)
-    except:
-        pass
-            
-    xbmc.executebuiltin("UpdateLocalAddons")
-    xbmc.executebuiltin("UpdateAddonRepos")
+def Plexus():
+		
+	url = "http://shadrach.pcriot.com/Add-ons/program.plexus-0.1.3.zip"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
+	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
 
 
 def Latino():
@@ -50,11 +50,11 @@ def Latino():
 	xbmc.executebuiltin("UpdateAddonRepos")
 	
 	
-def Pelisalacarta():
+def Pelisalacarta13():
 	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.pelisalacarta')):
 	#	return
 		
-	url = "http://shadrach.pcriot.com/Add-ons/pelisalacarta-xbmc-addon-gotham-3.9.99.zip"
+	url = "http://shadrach.pcriot.com/Add-ons/pelisalacarta-xbmc-gotham-4.0.3.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -68,8 +68,48 @@ def Pelisalacarta():
 			
 	xbmc.executebuiltin("UpdateLocalAddons")
 	xbmc.executebuiltin("UpdateAddonRepos")
+
+
+def Pelisalacarta14():
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.pelisalacarta')):
+	#	return
+		
+	url = "http://shadrach.pcriot.com/Add-ons/pelisalacarta-kodi-helix-4.0.3.zip"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
+
+
+def Pelisalacarta15():
+	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.pelisalacarta')):
+	#	return
+		
+	url = "http://shadrach.pcriot.com/Add-ons/pelisalacarta-kodi-isengard-4.0.3.zip"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
+
+
 def TValacarta():
 	# if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.tvalacarta')):
 	#	return

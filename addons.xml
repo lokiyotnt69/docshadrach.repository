@@ -14,6 +14,20 @@
 	</extension>
 </addon>
 
+<addon id="plugin.program.bestreposinstaller" name="Best Repos Installer" version="1.5.0" provider-name="Doc Shadrach">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary></summary>
+		<description>Instala los mejores repositorios y add-ons.</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
 <addon id="plugin.video.adryanlist"
        name="AdryanList"
        version="1.8.5"
@@ -39,20 +53,6 @@
     <description>Lista de canales de Adryan.</description>
     <platform>all</platform>
   </extension>
-</addon>
-
-<addon id="plugin.video.bestreposinstaller" name="Best Repos Installer" version="1.4.1" provider-name="Doc Shadrach">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary></summary>
-		<description>Instala los mejores repositorios y add-ons.</description>
-		<platform>all</platform>
-	</extension>
 </addon>
 
 <addon id="plugin.video.blank" name="blank" version="1.1" provider-name="Doc Shadrach">

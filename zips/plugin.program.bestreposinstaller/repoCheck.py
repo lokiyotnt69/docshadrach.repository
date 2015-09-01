@@ -71,11 +71,11 @@ def Bromix():
 	xbmc.executebuiltin("UpdateAddonRepos")
 
 
-def Iwf():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.iWillFolo.xbmc')):
+def Husham():
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.husham.com')):
 		return
 		
-	url = "http://shadrach.pcriot.com/Repos/repository.iWillFolo.xbmc.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.husham.com-1.0.7.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -115,7 +115,7 @@ def Kinkin():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.Kinkin')):
 		return
 		
-	url = "http://shadrach.pcriot.com/Repos/repository.Kinkin-1.3.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.Kinkin-1.4.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -171,26 +171,6 @@ def Metal():
 	xbmc.executebuiltin("UpdateAddonRepos")
 
 
-def Enen():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.p2p-streams.xbmc')):
-		return
-		
-	url = "http://shadrach.pcriot.com/Repos/repository.p2p-streams.xbmc-1.0.4.zip"
-	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
-	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
-	
-	urllib.urlretrieve(url, packageFile)
-	ExtractAll(packageFile, addonsDir)
-		
-	try:
-		os.remove(packageFile)
-	except:
-		pass
-			
-	xbmc.executebuiltin("UpdateLocalAddons")
-	xbmc.executebuiltin("UpdateAddonRepos")
-	
-
 def Pulsar():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.kodiunderground')):
 		return
@@ -229,7 +209,27 @@ def Shani():
 			
 	xbmc.executebuiltin("UpdateLocalAddons")
 	xbmc.executebuiltin("UpdateAddonRepos")
+
+
+def Enter():
+	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.entertainmentrepo')):
+		return
+		
+	url = "http://shadrach.pcriot.com/Repos/repository.entertainmentrepo-1.1.zip"
+	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
+	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
+	urllib.urlretrieve(url, packageFile)
+	ExtractAll(packageFile, addonsDir)
+		
+	try:
+		os.remove(packageFile)
+	except:
+		pass
+			
+	xbmc.executebuiltin("UpdateLocalAddons")
+	xbmc.executebuiltin("UpdateAddonRepos")
+
 
 def Highway():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.thehighway')):
@@ -251,51 +251,11 @@ def Highway():
 	xbmc.executebuiltin("UpdateAddonRepos")
 	
 	
-def Theyid():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.TheYid')):
-		return
-		
-	url = "http://shadrach.pcriot.com/Repos/repository.TheYid-2.0.zip"
-	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
-	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
-	
-	urllib.urlretrieve(url, packageFile)
-	ExtractAll(packageFile, addonsDir)
-		
-	try:
-		os.remove(packageFile)
-	except:
-		pass
-			
-	xbmc.executebuiltin("UpdateLocalAddons")
-	xbmc.executebuiltin("UpdateAddonRepos")
-	
-	
 def Tknorris():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.tknorris.release')):
 		return
 		
-	url = "http://shadrach.pcriot.com/Repos/repository.tknorris.release-1.0.1.zip"
-	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
-	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
-	
-	urllib.urlretrieve(url, packageFile)
-	ExtractAll(packageFile, addonsDir)
-		
-	try:
-		os.remove(packageFile)
-	except:
-		pass
-			
-	xbmc.executebuiltin("UpdateLocalAddons")
-	xbmc.executebuiltin("UpdateAddonRepos")
-	
-
-def Total():
-	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.totalinstaller')):
-		return
-		
-	url = "http://shadrach.pcriot.com/Repos/repository.totalinstaller.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.tknorris.release-1.0.2.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -315,7 +275,7 @@ def Tvaddons():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.xbmchub')):
 		return
 		
-	url = "http://shadrach.pcriot.com/Repos/repository.xbmchub-1.0.5.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.xbmchub-1.0.6.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
@@ -355,7 +315,7 @@ def Xunity():
 	if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'repository.xunitytalk')):
 		return
 		
-	url = "http://shadrach.pcriot.com/Repos/XunityTalk_Repository.zip"
+	url = "http://shadrach.pcriot.com/Repos/repository.xunitytalk-1.0.6.zip"
 	addonsDir = xbmc.translatePath(os.path.join('special://home', 'addons')).decode("utf-8")
 	packageFile = os.path.join(addonsDir, 'packages', 'isr.zip')
 	
