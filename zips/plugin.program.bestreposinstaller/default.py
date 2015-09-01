@@ -6,12 +6,21 @@ import xbmcaddon,xbmcplugin,xbmcgui
 import orphAddon
 import repoCheck
 
+import shutil
+
 Config = xbmcaddon.Addon()
 dialog = xbmcgui.Dialog()
 
 Progress = xbmcgui.DialogProgress()
 
-showed = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.bestreposinstaller', 'showed'))
+showed = xbmc.translatePath(os.path.join('special://home/addons/plugin.program.bestreposinstaller', 'showed'))
+
+
+if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.bestreposinstaller')):
+    shutil.rmtree(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.video.bestreposinstaller'))
+    xbmc.executebuiltin("UpdateLocalAddons")
+    xbmc.executebuiltin("UpdateAddonRepos")
+else: pass
 
 
 def TextBoxes(heading,anounce):

@@ -1,4 +1,8 @@
-﻿v1.5.0
+﻿v1.5.1
+- Borra el antiguo plugin de VIDEOS
+- Corrección de pequeños errores
+
+v1.5.0
 - Actualizados todos los repositorios a su última versión
 - Retirados los repositorios "p2p-streams", "TheYid's" y "TotalRevolution"
 - Añadido repositorio "Husham.com" (SportsDevil)
@@ -28,7 +32,7 @@ v1.3.3
 - Actualizado el enlace a KMediaTorrent ver 2.3.4
 
 v1.3.2
-- Corregido enlace al repositorio de lambda.
+- Corregido enlace al repositorio de lambda
 
 v1.3.1
 - Actualizado el enlace a pelisalacarta ver 3.9.99
