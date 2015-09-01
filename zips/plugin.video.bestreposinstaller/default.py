@@ -51,12 +51,14 @@ def Notify():
 
 Notify()
 
+def Check():
+    if os.path.exists(os.path.join(xbmc.translatePath("special://home/addons/").decode("utf-8"), 'plugin.program.bestreposinstaller')):
+        return
+    else:
+        repoCheck.DocRepo()
+        orphAddon.NewRepo()
 
-
-repoCheck.DocRepo()
-
-orphAddon.NewRepo()
-
+Check()
 
 sys.exit()
 
