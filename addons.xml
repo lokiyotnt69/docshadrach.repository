@@ -69,21 +69,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.blank" name="blank" version="1.1" provider-name="Doc Shadrach">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="main.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Add-on base</summary>
-		<description>Plantilla para crear tu propio add-on.</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="plugin.video.checker" name="CHECKER" version="1.0.1" provider-name="Doc Shadrach">
+<addon id="plugin.video.magnetplayer" name="Magnet Player" version="1.1.0" provider-name="Doc Shadrach">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -92,21 +78,7 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary></summary>
-		<description>Servidores disponibles: allmyvideos, streamcloud, played.to, vidspot, nowvideo, vk.</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="plugin.video.magnetplayer" name="Magnet Player" version="1.0.1" provider-name="Doc Shadrach">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary></summary>
-		<description>Reproduce 'Magnet Links' utilizando XBMCtorrent y/o Pulsar.</description>
+		<description>Reproduce 'Magnet Links' con Pulsar, XBMCtorrent, KMediaTorrent o Stream.</description>
 		<platform>all</platform>
 	</extension>
 </addon>
