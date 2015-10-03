@@ -115,7 +115,7 @@ if os.path.exists(favorites)==True:
     FAV = open(favorites).read()
 else: FAV = []
 
-SOURCES = [{"url": "http://adryanlist.info", "fanart": "http://i.imgur.com/GyK9PGj.jpg"}]
+SOURCES = [{"url": "http://bit.ly/adryanlistxml", "fanart": "http://i.imgur.com/GyK9PGj.jpg"}]
 
 # http://i.imgur.com/GyK9PGj.jpg
 # http://i.imgur.com/eklZFBE.png
